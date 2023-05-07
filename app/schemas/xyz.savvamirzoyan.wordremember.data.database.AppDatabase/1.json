@@ -1,0 +1,244 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "cad52a153f6093784032ff9a1037fd8a",
+    "entities": [
+      {
+        "tableName": "words_noun",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `gender` TEXT, `word` TEXT, `plural` TEXT, `isOnlyPlural` INTEGER NOT NULL, `translation` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gender",
+            "columnName": "gender",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "word",
+            "columnName": "word",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "plural",
+            "columnName": "plural",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isOnlyPlural",
+            "columnName": "isOnlyPlural",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "translation",
+            "columnName": "translation",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "words_verb",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`verbId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `word` TEXT NOT NULL, `translation` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "verbId",
+            "columnName": "verbId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "word",
+            "columnName": "word",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "translation",
+            "columnName": "translation",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "verbId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "words_adjective",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `word` TEXT NOT NULL, `translation` TEXT NOT NULL, `komparativ` TEXT NOT NULL, `superlativ` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "word",
+            "columnName": "word",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "translation",
+            "columnName": "translation",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "komparativ",
+            "columnName": "komparativ",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "superlativ",
+            "columnName": "superlativ",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "verb_forms",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `verbWordId` INTEGER NOT NULL, `prasensIch` TEXT, `prasensDu` TEXT, `prasensErSieEs` TEXT, `prasensWir` TEXT, `prasensIhr` TEXT, `prasensSieSie` TEXT, `prateritumIch` TEXT, `prateritumDu` TEXT, `prateritumErSieEs` TEXT, `prateritumWir` TEXT, `prateritumIhr` TEXT, `prateritumSieSie` TEXT, `perfekt` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "verbWordId",
+            "columnName": "verbWordId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "prasensIch",
+            "columnName": "prasensIch",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "prasensDu",
+            "columnName": "prasensDu",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "prasensErSieEs",
+            "columnName": "prasensErSieEs",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "prasensWir",
+            "columnName": "prasensWir",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "prasensIhr",
+            "columnName": "prasensIhr",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "prasensSieSie",
+            "columnName": "prasensSieSie",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "prateritumIch",
+            "columnName": "prateritumIch",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "prateritumDu",
+            "columnName": "prateritumDu",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "prateritumErSieEs",
+            "columnName": "prateritumErSieEs",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "prateritumWir",
+            "columnName": "prateritumWir",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "prateritumIhr",
+            "columnName": "prateritumIhr",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "prateritumSieSie",
+            "columnName": "prateritumSieSie",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "perfekt",
+            "columnName": "perfekt",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'cad52a153f6093784032ff9a1037fd8a')"
+    ]
+  }
+}
