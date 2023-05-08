@@ -55,7 +55,7 @@ class EditVocaFragment : Fragment() {
             }
         }
 
-        binding.confirm.setOnClickListener {
+        binding.edit.setOnClickListener {
             val english = binding.englishInput.text.toString()
             val means = binding.meansInput.text.toString()
 
@@ -64,6 +64,20 @@ class EditVocaFragment : Fragment() {
                 destroy()
             }
         }
+
+        //delete
+        binding.delete.setOnClickListener {
+            lifecycleScope.launch {
+                viewModel.deleteWord()
+                destroy()
+            }
+        }
+
+        binding.editCancel.setOnClickListener {
+            destroy()
+        }
+
+
         return binding.root
     }
 

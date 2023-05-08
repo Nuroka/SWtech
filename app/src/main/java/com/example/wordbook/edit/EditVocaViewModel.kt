@@ -46,4 +46,14 @@ class EditVocaViewModel(application: Application, val mWordId: Int): ViewModel()
             _state.value = EditVocaViewModelState.Ready(word)
         }
     }
+
+    //delete
+    suspend fun deleteWord(): Int {
+        if (mWordId == -1) {
+            return -1
+        }
+        val word = repository.findById(mWordId)
+        return repository.delete(word)
+    }
+
 }
