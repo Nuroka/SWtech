@@ -41,7 +41,7 @@ class GroupListFragment : Fragment() {
         binding.addGroupBtn.setOnClickListener{
             moveToRegisterGroup()
         }
-
+        //변경 일어나면 얘가 관찰해서 list 제출함
         viewModel.groups.observe(viewLifecycleOwner){
             adapter.submintList(it)
         }

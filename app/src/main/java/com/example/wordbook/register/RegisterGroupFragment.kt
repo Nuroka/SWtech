@@ -29,10 +29,10 @@ class RegisterGroupFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_register_group, container, false)
         viewModel = ViewModelProvider(this).get(RegisterGroupViewModel::class.java)
-
+        //여기서 등록 만듦.Title 입력 받아 title변수에 저장하고, 이를 이용해 Group 객체 생성(make함수)
+        //register가 DB에 저장하는 함수임 얘는 ViewModel에 정의되어 있음.
         binding.registerGroupBtn.setOnClickListener{
             val title = binding.inputGroupTitle.text.toString()
-
             viewModel.registerGroup(Group.make(title))
             destroy()
         }

@@ -11,15 +11,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.wordbook.R
 import com.example.wordbook.databinding.ViewholderGroupBinding
 
-class GroupListAdapter (val onMoveToRegisterGroup: ((group: Group)->Unit): ListAdapter<Group, GroupListAdapter.GroupListViewHolder>(GroupDiffCallback()){
+class GroupListAdapter (val onMoveToRegisterGroup: ((group: Group)->Unit): RecyclerView<Group, GroupListAdapter.RecyclerViewHolder>(GroupDiffCallback()){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GroupListViewModel {
-        return GroupListViewHolder.from(parent)
+        return GroupRecyclerViewHolder.from(parent)
     }
 
     //여기서 객체 클릭 제어
     override fun onBindViewHolder(holder: GroupListViewHolder, position: Int): GroupListViewHolder{
-        holder.binding.
+        holder.binding
     }
 
     class GroupDiffCallback:DiffUtil.ItemCallback<Group>(){
@@ -31,11 +31,12 @@ class GroupListAdapter (val onMoveToRegisterGroup: ((group: Group)->Unit): ListA
             return oldItem.equals(newItem)
         }
     }
-    class GroupListViewHolder private constructor(val binding: ViewholderGroupBinding) :
+    
+    private class GroupRecyclerViewHolder private constructor(val binding: ViewholderGroupBinding) :
         RecyclerView.ViewHolder(binding.root) {
         companion object {
-            fun from(parent: ViewGroup): GroupListViewHolder {
-                return GroupListViewHolder(
+            fun from(parent: ViewGroup): GroupRecyclerViewHolder {
+                return GroupRecyclerViewHolder(
                     DataBindingUtil.inflate(
                         LayoutInflater.from(parent.context),
                         R.layout.viewholder_group,

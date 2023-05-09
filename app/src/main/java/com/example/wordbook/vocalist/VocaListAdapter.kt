@@ -12,6 +12,7 @@ import com.example.wordbook.databinding.ViewholderVocaBinding
 
 class VocaListAdapter(val onMoveToEditVoca: (word: Word) -> Unit) : ListAdapter<Word, VocaListAdapter.VocaViewHolder>(VocaDiffCallback()) {
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VocaViewHolder {
         return VocaViewHolder.from(parent)
     }
@@ -32,6 +33,7 @@ class VocaListAdapter(val onMoveToEditVoca: (word: Word) -> Unit) : ListAdapter<
 
     }
 
+
     class VocaViewHolder private constructor(val binding: ViewholderVocaBinding) :
         RecyclerView.ViewHolder(binding.root) {
         companion object {
@@ -48,6 +50,7 @@ class VocaListAdapter(val onMoveToEditVoca: (word: Word) -> Unit) : ListAdapter<
         }
     }
 
+    //vaca 값 클릭하면 word 객체 가지고 edit창으로 이동하도록 Listener 정의함.
     class VocaClickListener(val onMoveToEditVoca: (word: Word) -> Unit) {
         fun onVocaClick(word: Word) = onMoveToEditVoca(word)
     }
