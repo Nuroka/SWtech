@@ -26,7 +26,6 @@ class VocaListBaseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         if (savedInstanceState == null) {
             openVocaListFragment()
         }
@@ -50,6 +49,7 @@ class VocaListBaseFragment : Fragment() {
             .setReorderingAllowed(true)
             .commit()
     }
+
 
     private fun getBackPressCallback(): OnBackPressedCallback {
         if (!::backPressCallback.isInitialized) {

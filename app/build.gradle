@@ -57,6 +57,4 @@ dependencies {
 
     //csv
     implementation 'com.opencsv:opencsv:5.5.2'
-    //단어 목록 거꾸로 할 때 추가하였음
-    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
 }

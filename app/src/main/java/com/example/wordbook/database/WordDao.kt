@@ -27,6 +27,9 @@ interface WordDao {
     @Query("select * from words WHERE id = :id")
     suspend fun findById(id: Int): Word
 
+    @Query("SELECT * FROM words WHERE english LIKE '%' || :searchKeyword || '%' OR means LIKE '%' || :searchKeyword || '%'")
+    suspend fun searchWords(searchKeyword: String): List<Word>
+
     @Query("select count(*) from words")
     suspend fun getCount(): Int
 

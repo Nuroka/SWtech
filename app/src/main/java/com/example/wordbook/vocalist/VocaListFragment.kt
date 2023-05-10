@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,6 +15,7 @@ import com.example.wordbook.database.Word
 import com.example.wordbook.databinding.FragmentVocaListBinding
 import com.example.wordbook.edit.EditVocaFragment
 import com.example.wordbook.register.RegisterVocaFragment
+import com.google.android.material.appbar.AppBarLayout
 
 class VocaListFragment : Fragment() {
 
@@ -25,8 +28,7 @@ class VocaListFragment : Fragment() {
     private lateinit var adapter: VocaListAdapter
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_voca_list, container, false)
@@ -42,11 +44,31 @@ class VocaListFragment : Fragment() {
             moveToRegisterVoca()
         }
 
+        // SearchView 초기화
+        binding.searchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String): Boolean {
+                // 검색 버튼을 눌렀을 때 호출되는 콜백 메서드
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                // 검색어가 변경될 때마다 호출되는 콜백 메서드
+                performSearch(newText)
+                return true
+            }
+        })
+
         viewModel.vocas.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
 
+        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
+
         return binding.root
+    }
+
+    private fun performSearch(query: String) {
+        viewModel.searchWords(query) // Room 데이터베이스 쿼리 실행
     }
 
     private fun moveToEditVoca(word: Word) {
@@ -60,6 +82,7 @@ class VocaListFragment : Fragment() {
             .commit()
     }
 
+
     private fun moveToRegisterVoca() {
         parentFragmentManager.beginTransaction()
             .replace(
@@ -70,4 +93,5 @@ class VocaListFragment : Fragment() {
             .addToBackStack(null)
             .commit()
     }
+
 }
