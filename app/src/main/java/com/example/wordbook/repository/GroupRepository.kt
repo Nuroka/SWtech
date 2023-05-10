@@ -12,6 +12,12 @@ class GroupRepository(private val database:GroupDatabase){
         return database.groupDao.getAllGroup()
     }
 
+    suspend fun getGroupList(): List<Group>{
+        return withContext(Dispatchers.IO) {
+            database.groupDao.selectAllGroup()
+        }
+    }
+
     suspend fun insertgroup(group: Group):Long{
         return withContext(Dispatchers.IO){
             database.groupDao.insertgroup(group)

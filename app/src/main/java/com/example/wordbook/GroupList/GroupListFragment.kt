@@ -9,9 +9,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wordbook.R
+import com.example.wordbook.database.Group
 import com.example.wordbook.databinding.FragmentGroupListBinding
 import com.example.wordbook.register.RegisterGroupFragment
-import java.security.acl.Group
 
 class GroupListFragment : Fragment() {
 
@@ -35,7 +35,7 @@ class GroupListFragment : Fragment() {
 
         binding.grouplistItem.layoutManager = LinearLayoutManager(requireContext())
         //adapter 부분 수정하기.
-        adapter = GroupListAdapter(::moveToRegisterGroup)
+        adapter = GroupListAdapter(::moveToGroup)
         binding.grouplistItem.adapter = adapter
 
         binding.addGroupBtn.setOnClickListener{
@@ -43,7 +43,9 @@ class GroupListFragment : Fragment() {
         }
         //변경 일어나면 얘가 관찰해서 list 제출함
         viewModel.groups.observe(viewLifecycleOwner){
-            adapter.submintList(it)
+            //it 람다 -> 함수 인자 말함. 그럼 함수 인자가 잘못되어 있다는 것 같은데
+            //
+            adapter.submitList(it)
         }
 
         return binding.root
@@ -52,7 +54,7 @@ class GroupListFragment : Fragment() {
     //단어장 삭제 버튼 누를 시 단어장 삭제 이벤트
 
     //추가 버튼 누를 시 단어장 추가 프래그먼트로 이동
-    private fun moveToRegisterGroup(group:Group){
+    private fun moveToRegisterGroup(){
         parentFragmentManager.beginTransaction()
             .replace(
                 GroupListBaseFragment.GROUP_LIST_FRAGMENT_CONTAINER_ID,
@@ -64,6 +66,15 @@ class GroupListFragment : Fragment() {
     }
 
     // 단어장 클릭 시 그룹으로 이동
-    //private fun moveToGroup(group:Group){}
+    private fun moveToGroup(group:Group){
+        parentFragmentManager.beginTransaction()
+            .replace(
+                GroupListBaseFragment.GROUP_LIST_FRAGMENT_CONTAINER_ID,
+                RegisterGroupFragment.newInstance()
+            )
+            .setReorderingAllowed(true)
+            .addToBackStack(null)
+            .commit()
+    }
 
 }

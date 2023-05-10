@@ -10,13 +10,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a862a456-370a-43d9-98a1-7a4b43129bf5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/wordbook/groupword/GroupWordBaseFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/wordbook/groupword/GroupWordFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_group_word.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_group_word_base.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/wordbook/GroupList/GroupListAdapder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/wordbook/GroupList/GroupListAdapder.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/wordbook/GroupList/GroupListFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/wordbook/GroupList/GroupListFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/wordbook/register/RegisterGroupFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/wordbook/register/RegisterGroupFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/wordbook/database/GroupDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/wordbook/database/GroupDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/wordbook/database/WordDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/wordbook/database/WordDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/wordbook/repository/GroupRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/wordbook/repository/GroupRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/wordbook/vocalist/VocaListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/wordbook/vocalist/VocaListAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/wordbook/vocalist/VocaListBaseFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/wordbook/vocalist/VocaListBaseFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/wordbook/vocalist/VocaListFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/wordbook/vocalist/VocaListFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/viewholder_group.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/viewholder_group.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

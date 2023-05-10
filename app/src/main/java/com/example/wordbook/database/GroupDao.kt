@@ -13,7 +13,8 @@ interface GroupDao {
 
     @Delete
     suspend fun deletegroup(group: Group)
-
+    @Query("select * from groups")
+    fun selectAllGroup(): List<Group>
     @Query("select * from groups")
     fun getAllGroup(): LiveData<List<Group>>
 

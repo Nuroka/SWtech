@@ -14,6 +14,8 @@ import com.example.wordbook.databinding.FragmentVocaListBinding
 import com.example.wordbook.edit.EditVocaFragment
 import com.example.wordbook.register.RegisterVocaFragment
 
+//여기서 다른 프래그먼트로 이동하는 함수 정의 하는 듯함
+//어답터는 감지해서 그걸 실행하도록 도와주는 것.
 class VocaListFragment : Fragment() {
 
     //인스턴스 생성
@@ -77,6 +79,7 @@ class VocaListFragment : Fragment() {
 
     private fun moveToRegisterVoca() {
         //voca 추가하는 동작시 값을 저장하고 이 다음을 실행
+        //뷰를 갱신하는 듯.
         parentFragmentManager.beginTransaction()
             .replace(
                 VocaListBaseFragment.VOCA_LIST_FRAGMENT_CONTAINER_ID,
