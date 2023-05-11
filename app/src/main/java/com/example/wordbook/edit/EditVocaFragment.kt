@@ -7,11 +7,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.example.wordbook.R
+import com.example.wordbook.database.Word
 import com.example.wordbook.databinding.FragmentEditVocaBinding
 import kotlinx.coroutines.launch
 
@@ -60,8 +62,16 @@ class EditVocaFragment : Fragment() {
             val means = binding.meansInput.text.toString()
 
             lifecycleScope.launch {
-                viewModel.updateWord(english, means)
-                destroy()
+                if (english.isNotEmpty() && means.isNotEmpty()) {
+                    viewModel.updateWord(english, means)
+                    destroy()
+                } else if (english.isEmpty()) {
+                    // 영어 단어가 입력되지 않은 경우, 즉시 알림을 띄웁니다.
+                    Toast.makeText(context, "영어에 글자를 입력해 주세요", Toast.LENGTH_SHORT).show()
+                } else {
+                    // 뜻에 글자가 입력되지 않은 경우, 즉시 알림을 띄웁니다.
+                    Toast.makeText(context, "뜻에 글자를 입력해 주세요", Toast.LENGTH_SHORT).show()
+                }
             }
         }
 
