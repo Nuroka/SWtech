@@ -4,10 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import androidx.room.Update
 
 interface GroupDao {
-
     @Insert
     suspend fun insertgroup(group: Group): Long
 
@@ -23,6 +21,4 @@ interface GroupDao {
 
     @Query("select count(*) from groups")
     suspend fun countGroupNum(): Int
-
-
 }

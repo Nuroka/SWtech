@@ -6,15 +6,16 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "groups")
 data class Group (
     @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    val groupid: Int = 0,
     val grouptitle: String
     ){
+    //만약 생성에 문제생기면 여기인 거임...!
     companion object{
-        fun make(title: String): Group{
-            return Group(0, title)
+        fun make(id: Int, title:String){
+            Group(id, title)
         }
-        fun make(id:Int, title:String):Group{
-            return Group(id,title)
+        fun make(title: String){
+            Group(0, title)
         }
     }
 }

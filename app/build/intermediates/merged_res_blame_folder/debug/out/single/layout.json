@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "com.example.wordbook.app-mergeDebugResources-36:/layout/viewholder_voca.xml",
+        "source": "com.example.wordbook.app-main-39:/layout/viewholder_voca.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-mergeDebugResources-36:/layout/viewholder_groupword.xml",
+        "source": "com.example.wordbook.app-main-39:/layout/viewholder_groupword.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-mergeDebugResources-36:/layout/fragment_study.xml",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_study.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-mergeDebugResources-36:/layout/fragment_voca_list.xml",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_voca_list.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-mergeDebugResources-36:/layout/fragment_test.xml",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_test.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-mergeDebugResources-36:/layout/fragment_main.xml",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_main.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-mergeDebugResources-36:/layout/fragment_register_group.xml",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_register_group.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-mergeDebugResources-36:/layout/fragment_register_voca.xml",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_register_voca.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-mergeDebugResources-36:/layout/fragment_edit_voca.xml",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_edit_voca.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-mergeDebugResources-36:/layout/viewholder_group.xml",
+        "source": "com.example.wordbook.app-main-39:/layout/viewholder_group.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-mergeDebugResources-36:/layout/fragment_group_list.xml",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_group_list.xml"
+    }
+]

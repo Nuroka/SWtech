@@ -1,4 +1,4 @@
-package com.example.wordbook.GroupList
+package com.example.wordbook.grouplist
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wordbook.R
 import com.example.wordbook.database.Group
 import com.example.wordbook.databinding.FragmentGroupListBinding
+import com.example.wordbook.groupword.GroupWordFragment
 import com.example.wordbook.register.RegisterGroupFragment
 
 class GroupListFragment : Fragment() {
@@ -53,6 +54,7 @@ class GroupListFragment : Fragment() {
 
     //단어장 삭제 버튼 누를 시 단어장 삭제 이벤트
 
+
     //추가 버튼 누를 시 단어장 추가 프래그먼트로 이동
     private fun moveToRegisterGroup(){
         parentFragmentManager.beginTransaction()
@@ -66,11 +68,12 @@ class GroupListFragment : Fragment() {
     }
 
     // 단어장 클릭 시 그룹으로 이동
-    private fun moveToGroup(group:Group){
+    private fun moveToGroup(group: Group){
         parentFragmentManager.beginTransaction()
             .replace(
                 GroupListBaseFragment.GROUP_LIST_FRAGMENT_CONTAINER_ID,
-                RegisterGroupFragment.newInstance()
+                //이건 좀 고려를 해봐야할 듯, 어떻게 넘어가야할지.
+                GroupWordFragment.newInstance(group)
             )
             .setReorderingAllowed(true)
             .addToBackStack(null)

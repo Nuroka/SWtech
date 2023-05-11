@@ -18,7 +18,7 @@ interface WordDao {
     suspend fun update(word: Word): Int
 
     @Query("select * from words")
-    suspend fun selectAllWithLiveData(): LiveData<List<Word>>
+    fun selectAllWithLiveData(): LiveData<List<Word>>
 
     @Query("select * from words")
     suspend fun selectAll(): List<Word>

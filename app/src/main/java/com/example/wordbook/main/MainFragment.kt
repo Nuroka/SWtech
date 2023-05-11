@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentManager
 import com.example.wordbook.BaseActivity
-import com.example.wordbook.GroupList.GroupListFragment
+import com.example.wordbook.grouplist.GroupListFragment
 import com.example.wordbook.R
 import com.example.wordbook.databinding.FragmentMainBinding
 import com.example.wordbook.study.StudyFragment
@@ -70,7 +70,7 @@ class MainFragment : Fragment() {
             addVocaListFragment()
         }
 
-        binding.group.setOnClickListener {
+        binding.mainTogroupBtn.setOnClickListener {
             addGroupFragment()
         }
 

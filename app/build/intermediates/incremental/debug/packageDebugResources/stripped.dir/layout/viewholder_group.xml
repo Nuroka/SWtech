@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                              
+                                                       
+                                                   
+
+    
+                 
+                             
+                                                            
+                 
+                               
+                                                                                       
+           
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="179dp" android:tag="layout/viewholder_group_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+        <View
+            android:id="@+id/view"
+            android:layout_width="263dp"
+            android:layout_height="118dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/green_200"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.312"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:tag="binding_1"                                          />
+
+        <TextView
+            android:id="@+id/grouptitlename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="title"
+            android:textSize="24sp"
+            android:tag="binding_2"           
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toTopOf="@+id/view" />
+            <!--text에 grouptitle 표시 가능하도록 변수 선언 필요-->
+        <Button
+            android:id="@+id/deleteGroupBtn"
+            android:layout_width="53dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:text="-"
+            app:layout_constraintStart_toEndOf="@+id/view"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+         
+
+<!--
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+-->

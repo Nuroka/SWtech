@@ -2,26 +2,19 @@
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools">
+
     <data>
         <variable
             name="grouptitle"
             type="com.example.wordbook.database.Group"/>
         <variable
             name="onClickGroup"
-            type="com.example.wordbook.GroupList.GroupListAdapter.GroupClickListener"/>
+            type="com.example.wordbook.grouplist.GroupListAdapter.GroupClickListener"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="359dp"
-        android:layout_height="179dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="@{() -> onClickGroup.onGroupClick(grouptitle) }" >
-
+        android:layout_width="match_parent"
+        android:layout_height="179dp">
         <View
             android:id="@+id/view"
             android:layout_width="263dp"
@@ -31,7 +24,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.312"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="@{() -> onClickGroup.onGroupClick(grouptitle) }"/>
 
         <TextView
             android:id="@+id/grouptitlename"
@@ -40,7 +34,7 @@
             android:layout_marginStart="24dp"
             android:text="title"
             android:textSize="24sp"
-            app:grouptitle="@{grouptitle}"
+            app:grouptitlename="@{grouptitle}"
             app:layout_constraintBottom_toBottomOf="@+id/view"
             app:layout_constraintStart_toStartOf="@+id/view"
             app:layout_constraintTop_toTopOf="@+id/view" />
@@ -56,3 +50,8 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
+
+<!--
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+-->
