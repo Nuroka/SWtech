@@ -2,7 +2,6 @@ package com.example.wordbook.main;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,8 +18,6 @@ import com.example.wordbook.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText et_id, et_pass;

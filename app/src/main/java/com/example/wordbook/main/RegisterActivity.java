@@ -20,7 +20,7 @@ import org.json.JSONObject;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText et_id, et_pass, et_name, et_age;
+    private EditText et_id, et_pass, et_passcheck, et_pwquestion, et_pwanswer;
     private Button btn_register;
 
     @Override
@@ -31,8 +31,9 @@ public class RegisterActivity extends AppCompatActivity {
         // 아이디 값 찾아주기
         et_id = findViewById(R.id.et_id);
         et_pass = findViewById(R.id.et_pass);
-        et_name = findViewById(R.id.et_name);
-        et_age = findViewById(R.id.et_age);
+        et_passcheck = findViewById(R.id.et_passcheck);
+        et_pwquestion = findViewById(R.id.et_pwquestion);
+        et_pwanswer = findViewById(R.id.et_pwanswer);
 
         // 회원가입 버튼 클릭 시 수행
         btn_register = findViewById(R.id.btn_register);
@@ -42,8 +43,11 @@ public class RegisterActivity extends AppCompatActivity {
                 // EditText에 현재 입력되어있는 값을 get(가져온다)해온다.
                 String userID = et_id.getText().toString();
                 String userPass = et_pass.getText().toString();
-                String userName = et_name.getText().toString();
-                int userAge = Integer.parseInt(et_age.getText().toString());
+                String userPasscheck = et_passcheck.getText().toString();
+                String userPwquestion = et_pwquestion.getText().toString();
+                String userPwanswer = et_pwanswer.getText().toString();
+
+                //int userAge = Integer.parseInt(et_age.getText().toString());
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
@@ -66,7 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                 };
                 // 서버로 Volley를 이용해서 요청을 함.
-                RegisterRequest registerRequest = new RegisterRequest(userID,userPass,userName,userAge, responseListener);
+                RegisterRequest registerRequest = new RegisterRequest(userID,userPass,userPasscheck,userPwquestion, userPwanswer, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
                 queue.add(registerRequest);
 
