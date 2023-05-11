@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">단어장</string>
+    <string name="app_name">VocaBambi</string>
+    <string name="main_name">단어장</string>
 
     <!-- MainActivity -->
     <string name="action_study">공부하기</string>
@@ -22,10 +23,12 @@
     <string name="title_only_korean">뜻만</string>
     <string name="title_only_english">영어만</string>
     <string name="title_both">모두</string>
+    <string name="english_input">영어 단어를 입력하세요</string>
+    <string name="means_input">영어 단어의 뜻을 입력하세요</string>
 
+    <string name="add_button">단어 추가 버튼</string>
     <string name="action_confirm">확인</string>
     <string name="action_edit">수정</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="action_add">추가</string>
     <string name="action_delete">삭제</string>
     <string name="action_cancel">취소</string>

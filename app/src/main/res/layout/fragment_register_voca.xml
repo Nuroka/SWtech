@@ -18,8 +18,8 @@
             android:id="@+id/english"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="150dp"
             android:text="@string/title_english"
             android:textColor="#000000"
             android:textSize="20sp"
@@ -28,11 +28,12 @@
 
         <EditText
             android:id="@+id/english_input"
-            android:layout_width="0dp"
+            android:layout_width="330dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:text="@{word.english}"
+            android:hint="@string/english_input"
             app:layout_constraintBottom_toBottomOf="@id/english"
             app:layout_constraintLeft_toRightOf="@id/english"
             app:layout_constraintRight_toRightOf="parent"
@@ -42,8 +43,8 @@
             android:id="@+id/means"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="30dp"
             android:text="@string/title_mean"
             android:textColor="#000000"
             android:textSize="20sp"
@@ -52,35 +53,42 @@
 
         <EditText
             android:id="@+id/means_input"
-            android:layout_width="0dp"
+            android:layout_width="330dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:text="@{word.means}"
+            android:hint="@string/means_input"
             app:layout_constraintBottom_toBottomOf="@id/means"
             app:layout_constraintLeft_toRightOf="@id/english"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/means" />
 
-        <Button
-            android:id="@+id/add"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:background="#000000"
-            android:text="@string/action_add"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="bottom"
+            app:layout_constraintBottom_toBottomOf="parent">
 
-        <Button
-            android:id="@+id/addCancel"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:background="#000000"
-            android:text="@string/action_cancel"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            <Button
+                android:id="@+id/addCancel"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="#000000"
+                android:text="@string/action_cancel"
+                android:textSize="18sp" />
+            <Button
+                android:id="@+id/add"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="#000000"
+                android:text="@string/action_add"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
