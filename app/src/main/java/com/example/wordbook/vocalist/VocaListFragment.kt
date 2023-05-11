@@ -47,12 +47,11 @@ class VocaListFragment : Fragment() {
         // SearchView 초기화
         binding.searchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String): Boolean {
-                // 검색 버튼을 눌렀을 때 호출되는 콜백 메서드
                 return true
             }
 
             override fun onQueryTextChange(newText: String): Boolean {
-                // 검색어가 변경될 때마다 호출되는 콜백 메서드
+                // 검색어가 변경될 때마다 호출됨.
                 performSearch(newText)
                 return true
             }
@@ -62,7 +61,8 @@ class VocaListFragment : Fragment() {
             adapter.submitList(it)
         }
 
-        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
+        //action bar 숨기기
+        //(requireActivity() as AppCompatActivity).supportActionBar?.hide()
 
         return binding.root
     }
