@@ -6,11 +6,10 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 
-//해당 이름의 data base 생성.
+//해당 이름의 data base 생성. 추후 GroupWord가 누락될 시 여기에 테이블 생성되는지 확인.
 @Database(entities = [Group::class, GroupWord::class], version = 1)
 abstract class GroupListDatabase: RoomDatabase(){
     abstract val groupDao: GroupDao
-    abstract val groupWordDao: GroupWord
 }
 
 private const val DATABASE_NAME = "groups.db"

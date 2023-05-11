@@ -1,9 +1,12 @@
 package com.example.wordbook.repository
 
 import androidx.lifecycle.LiveData
+import androidx.room.Delete
+import androidx.room.Query
 import com.example.wordbook.database.Group
 import com.example.wordbook.database.GroupListDatabase
 import com.example.wordbook.database.GroupWord
+import com.example.wordbook.database.Word
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -40,6 +43,50 @@ class GroupListRepository(private val database:GroupListDatabase) {
     suspend fun getCounts(): Int {
         return withContext(Dispatchers.IO) {
             database.groupDao.countGroupNum()
+        }
+    }
+
+    suspend fun insertGroupWord(word:GroupWord): Long{
+        return withContext(Dispatchers.IO) {
+            database.groupDao.insertGroupWord(word)
+        }
+    }
+    suspend fun deleteGroupWord(word:GroupWord) {
+        return withContext(Dispatchers.IO) {
+            database.groupDao.deleteGroupWord(word)
+        }
+    }
+
+    suspend fun selectAllGroupWord(): List<GroupWord> {
+        return withContext(Dispatchers.IO) {
+            database.groupDao.selectAllGroupWord()
+        }
+    }
+
+    fun getAllGroupWord(): LiveData<List<Group>>{
+        return database.groupDao.getAllGroupWord()
+    }
+
+    suspend fun findByGroupWordInWord(id: Int): Word{
+        return withContext(Dispatchers.IO) {
+            database.groupDao.findByGroupWordInWord(id)
+        }
+    }
+
+    suspend fun findByGroupidInGroupWord(groupid: Int): Int {
+        return withContext(Dispatchers.IO) {
+            database.groupDao.findByGroupidInGroupWord(groupid)
+        }
+    }
+
+    suspend fun findByGroupWord(groupid: Int): Int {
+        return withContext(Dispatchers.IO) {
+            database.groupDao.findByGroupWord(groupid)
+        }
+    }
+    suspend fun getCountGroupWord(groupid: Int): Int {
+        return withContext(Dispatchers.IO) {
+            database.groupDao.getCountGroupWord(groupid)
         }
     }
 }
