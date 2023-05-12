@@ -4,7 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-
+import androidx.room.Transaction
+//group or data base 두개 사용할 때 Transaction 사용
 interface GroupDao {
     @Insert
     suspend fun insertgroup(group: Group): Long
@@ -39,6 +40,7 @@ interface GroupDao {
 
     @Query("select groupid_base_groupword from groupwords where groupid_base_groupword = :groupid ")
     suspend fun findByGroupidInGroupWord(groupid: Int): Int
+
     @Query("select groupword from groupwords where groupid_base_groupword = :groupid ")
     suspend fun findByGroupWord(groupid: Int): Int
 

@@ -36,13 +36,19 @@ class GroupListFragment : Fragment() {
 
         binding.grouplistItem.layoutManager = LinearLayoutManager(requireContext())
         //adapter 부분 수정하기.
+
         adapter = GroupListAdapter(::moveToGroup)
         binding.grouplistItem.adapter = adapter
 
+
+        //삭제 버튼.
         binding.addGroupBtn.setOnClickListener{
             moveToRegisterGroup()
         }
-        //변경 일어나면 얘가 관찰해서 list 제출함
+
+        //변경 일어나면 얘가 관찰해서 list 제출함 아..
+        // 이놈이 그거다 얘가 전달 받아서 뷰 제출하는 거네
+        // 그럼 일단 다 생성하고 그다음에 data따라 달라지도록 수정하는 걸로 하자.
         viewModel.groups.observe(viewLifecycleOwner){
             //it 람다 -> 함수 인자 말함. 그럼 함수 인자가 잘못되어 있다는 것 같은데
             //
@@ -51,9 +57,6 @@ class GroupListFragment : Fragment() {
 
         return binding.root
     }
-
-    //단어장 삭제 버튼 누를 시 단어장 삭제 이벤트
-
 
     //추가 버튼 누를 시 단어장 추가 프래그먼트로 이동
     private fun moveToRegisterGroup(){
@@ -73,7 +76,7 @@ class GroupListFragment : Fragment() {
             .replace(
                 GroupListBaseFragment.GROUP_LIST_FRAGMENT_CONTAINER_ID,
                 //이건 좀 고려를 해봐야할 듯, 어떻게 넘어가야할지.
-                GroupWordFragment.newInstance(group)
+                GroupWordFragment.newInstance()
             )
             .setReorderingAllowed(true)
             .addToBackStack(null)

@@ -65,6 +65,7 @@ class VocaListAdapter(val onMoveToEditVoca: (word: Word) -> Unit) : ListAdapter<
     }
 
     //vaca 값 클릭하면 word 객체 가지고 edit창으로 이동하도록 Listener 정의함.
+    //여기서 word값 얻어 Edit창으로 이동함!
     class VocaClickListener(val onMoveToEditVoca: (word: Word) -> Unit) {
         fun onVocaClick(word: Word) = onMoveToEditVoca(word)
     }

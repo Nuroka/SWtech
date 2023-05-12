@@ -17,11 +17,18 @@ class GroupListAdapter (val onMoveToGroup: (group: Group) -> Unit): ListAdapter<
     }
 
     //여기서 객체 클릭 제어
+    //얘가 data를 연결하네.... 아ㅏ....
+    //여기서 gorupid 전달하기.
+    //그리고 전달받은 프래그먼트에서 newInstance에 인자로 받아 get으로 얻기.
+    //get으로 id얻어서 객체를 LiveData 변환으로 뷰모델에서 얻어보면 됨.
+    //얻은 후 방식 그대로 사용하기...
     override fun onBindViewHolder(holder: GroupListViewHolder, position: Int) {
         //얘만 해결하고 나머지 구현 후 run 해보기.
         holder.binding.grouptitle = getItem(position)
         holder.binding.onClickGroup = GroupClickListener(onMoveToGroup)
+        //holder.binding.deleteGroupBtn.setOnClickListener(group:Group)
     }
+
 
     class GroupDiffCallback:DiffUtil.ItemCallback<Group>(){
         override fun areItemsTheSame(oldItem: Group, newItem: Group): Boolean {
@@ -48,8 +55,8 @@ class GroupListAdapter (val onMoveToGroup: (group: Group) -> Unit): ListAdapter<
             }
         }
     }
-
     //여기서 객체 클릭, 삭제 관여
+    //https://parkho79.tistory.com/155 확인해보기
     class GroupClickListener(val onMoveToGroup: (group: Group) -> Unit){
         //클릭해서 Group으로 이동하기 전에 word 설정하고 가기
         fun onGroupClick(group: Group) = onMoveToGroup(group)
