@@ -45,6 +45,7 @@
             android:layout_marginBottom="44dp"
             android:background="@color/gray_input"
             android:ems="10"
+            android:text="@{grouptitle.grouptitle}"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toTopOf="@+id/registerGroupBtn"
             app:layout_constraintEnd_toEndOf="parent"

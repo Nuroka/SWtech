@@ -33,7 +33,7 @@ class RegisterGroupFragment : Fragment() {
         //register가 DB에 저장하는 함수임 얘는 ViewModel에 정의되어 있음.
         binding.registerGroupBtn.setOnClickListener{
             val title = binding.inputGroupTitle.text.toString()
-            viewModel.registerGroup(Group.make(title))
+            viewModel.registerGroup(Group(title))
             destroy()
         }
         return binding.root

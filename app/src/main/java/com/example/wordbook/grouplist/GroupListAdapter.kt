@@ -26,6 +26,7 @@ class GroupListAdapter (val onMoveToGroup: (group: Group) -> Unit): ListAdapter<
         //얘만 해결하고 나머지 구현 후 run 해보기.
         holder.binding.grouptitle = getItem(position)
         holder.binding.onClickGroup = GroupClickListener(onMoveToGroup)
+
         //holder.binding.deleteGroupBtn.setOnClickListener(group:Group)
     }
 
