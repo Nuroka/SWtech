@@ -31,11 +31,13 @@ class RegisterVocaFragment : Fragment() {
             inflater, R.layout.fragment_register_voca, container, false)
         viewModel = ViewModelProvider(this).get(RegisterVocaViewModel::class.java)
 
+        //수정한 부분 (word 클래스에 day가 추가되어)
         binding.confirm.setOnClickListener {
             val english = binding.englishInput.text.toString()
             val means = binding.meansInput.text.toString()
+            val day = binding.dayInput.text.toString().toInt()
 
-            viewModel.registerWord(Word.make(english, means))
+            viewModel.registerWord(Word.make(english, means, day)) //day 추가
             destroy()
         }
 

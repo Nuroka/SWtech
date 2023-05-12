@@ -27,12 +27,12 @@ class EditVocaViewModel(application: Application, val mWordId: Int): ViewModel()
         load(mWordId)
     }
 
-    suspend fun updateWord(english: String, means: String): Int {
+    suspend fun updateWord(english: String, means: String, day: Int): Int { //Word 클래스에 day를 추가하여 여기도 수정된 부분
         if (mWordId == -1) {
             return -1
         }
 
-        return repository.update(Word.make(mWordId, english, means))
+        return repository.update(Word.make(mWordId, english, means, day)) //day 추가
     }
 
     private fun load(wordId: Int) {

@@ -28,4 +28,9 @@ interface WordDao {
 
     @Query("select count(*) from words")
     suspend fun getCount(): Int
+
+    //추가한 부분
+    // day에 해당하는 Word 목록을 반환하는 함수
+    @Query("SELECT * FROM words WHERE day = :day ORDER BY id ASC")
+    suspend fun getWordsOfDay(day: Int): List<Word>
 }

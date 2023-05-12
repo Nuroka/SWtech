@@ -101,3 +101,10 @@ fun TextView.setFourthCandidate(item: TestViewModel.TestUnit?) {
         text =  it.candidates[3].means
     }
 }
+
+/*@BindingAdapter("day1select")
+fun TextView.setDay1select(item: TestViewModel.TestUnit?){
+    item?.let {
+        text = it.day.
+    }
+}*/

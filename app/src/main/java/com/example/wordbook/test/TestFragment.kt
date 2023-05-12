@@ -22,6 +22,7 @@ class TestFragment : Fragment() {
         fun newInstance() = TestFragment()
     }
 
+
     private lateinit var viewModel: TestViewModel
     private lateinit var binding: FragmentTestBinding
     private lateinit var backPressCallback: OnBackPressedCallback

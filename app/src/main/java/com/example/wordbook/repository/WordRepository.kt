@@ -40,4 +40,11 @@ class WordRepository(private val database: WordDatabase) {
             database.wordDao.getCount()
         }
     }
+
+    //추가한 부분
+    //WordDao에서 추가한 함수를 사용하여 그룹화된 단어장 가져오기
+    suspend fun getWordsOfDay(day: Int): List<Word>{
+        return database.wordDao.getWordsOfDay(day)
+        //return words.filter { it.day == day }
+    }
 }

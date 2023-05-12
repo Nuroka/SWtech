@@ -1,9 +1,13 @@
 package com.example.wordbook.main
 
 import android.app.Application
+import android.content.Intent
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.*
 import com.example.wordbook.database.getDatabase
 import com.example.wordbook.repository.WordRepository
+import com.example.wordbook.test.TestDateActivity
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
@@ -65,5 +69,12 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
         return viewModelScope.async {
             repository.getCounts() >= LIMIT_TO_MOVE_TEST
         }.await()
+    }
+
+    //추가한 부분
+    fun moveToTestDate() {
+        val intent = Intent(getApplication(), TestDateActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        ContextCompat.startActivity(getApplication(), intent, null)
     }
 }

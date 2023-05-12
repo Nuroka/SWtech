@@ -96,6 +96,15 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/button_means3" />
 
+            <Button
+                android:id="@+id/button_means5"
+                style="@style/answerBtn"
+                android:text="모르겠음"
+                android:onClick="@{() -> viewModel.onClickCandidate(4)}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button_means4" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

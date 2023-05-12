@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@color/black"
-            android:onClick="@{() -> viewModel.moveToTest()}"
+            android:onClick="@{() -> viewModel.moveToTestDate()}"
             android:text="@string/action_test"
             android:textColor="@color/white"
             app:layout_constraintLeft_toLeftOf="parent"

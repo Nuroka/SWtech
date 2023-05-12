@@ -25,6 +25,7 @@ android {
     }
     buildFeatures {
         dataBinding true
+        viewBinding true //추가
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -57,4 +58,5 @@ dependencies {
 
     //csv
     implementation 'com.opencsv:opencsv:5.5.2'
+
 }

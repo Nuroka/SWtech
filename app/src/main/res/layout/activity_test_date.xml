@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/recyclerView"
+    tools:context=".test.TestDateActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="416dp"
+        android:layout_height="118dp"
+        android:layout_marginTop="-31dp"
+        android:src="@drawable/testdateselect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_day1"
+        android:text="day 1"
+        android:textColor="@color/black"
+        android:gravity=""
+        android:layout_width="378dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#CFCFD3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0"
+        android:onClick="@{() -> viewModel.onClickDay(1)}"/>
+
+    <Button
+        android:id="@+id/button_day2"
+        android:text="day 2"
+        android:textColor="@color/black"
+        android:gravity=""
+        android:layout_width="378dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#CFCFD3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_day1"
+        app:layout_constraintVertical_bias="0.0"
+        android:onClick="@{() -> viewModel.onClickDay(2)}"/>
+
+    <Button
+        android:id="@+id/button_day3"
+        android:text="day 3"
+        android:textColor="@color/black"
+        android:gravity=""
+        android:layout_width="378dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#CFCFD3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_day2"
+        app:layout_constraintVertical_bias="0.0"
+        android:onClick="@{() -> viewModel.onClickDay(3)}"
+        />
+
+    <Button
+        android:id="@+id/button_day4"
+        android:text="day 4"
+        android:textColor="@color/black"
+        android:gravity=""
+        android:layout_width="378dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#CFCFD3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_day3"
+        app:layout_constraintVertical_bias="0.0"
+        android:onClick="@{() -> viewModel.onClickDay(4)}"
+        />
+
+    <Button
+        android:id="@+id/button_day5"
+        android:text="day 5"
+        android:textColor="@color/black"
+        android:gravity=""
+        android:layout_width="378dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#CFCFD3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_day4"
+        app:layout_constraintVertical_bias="0.0"
+        android:onClick="@{() -> viewModel.onClickDay(5)}"/>
+
+    <Button
+        android:id="@+id/button_day6"
+        android:text="day 6"
+        android:textColor="@color/black"
+        android:gravity=""
+        android:layout_width="378dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#CFCFD3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_day5"
+        app:layout_constraintVertical_bias="0.0"
+        android:onClick="@{() -> viewModel.onClickDay(6)}"/>
+
+    <Button
+        android:id="@+id/button_day7"
+        android:text="day 7"
+        android:textColor="@color/black"
+        android:gravity=""
+        android:layout_width="378dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#CFCFD3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_day6"
+        app:layout_constraintVertical_bias="0.0"
+        android:onClick="@{() -> viewModel.onClickDay(7)}"/>
+
+    <Button
+        android:id="@+id/button_day8"
+        android:text="day 8"
+        android:textColor="@color/black"
+        android:gravity=""
+        android:layout_width="378dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#CFCFD3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_day7"
+        app:layout_constraintVertical_bias="0.0"
+        android:onClick="@{() -> viewModel.onClickDay(8)}"/>
+
+    <Button
+        android:id="@+id/button_day9"
+        android:text="day 9"
+        android:textColor="@color/black"
+        android:gravity=""
+        android:layout_width="378dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#CFCFD3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_day8"
+        app:layout_constraintVertical_bias="0.0"
+        android:onClick="@{() -> viewModel.onClickDay(9)}"/>
+
+    <Button
+        android:id="@+id/button_day10"
+        android:text="day 10"
+        android:textColor="@color/black"
+        android:gravity=""
+        android:layout_width="378dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#CFCFD3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_day9"
+        app:layout_constraintVertical_bias="0.0"
+        android:onClick="@{() -> viewModel.onClickDay(10)}"/>
+
+    <Button
+        android:id="@+id/button_day11"
+        android:text="day 11"
+        android:textColor="@color/black"
+        android:gravity=""
+        android:layout_width="378dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#CFCFD3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_day10"
+        app:layout_constraintVertical_bias="0.0"
+        android:onClick="@{() -> viewModel.onClickDay(11)}"/>
+
+    <Button
+        android:id="@+id/button_day12"
+        android:text="day 12"
+        android:textColor="@color/black"
+        android:gravity=""
+        android:layout_width="378dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#CFCFD3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_day11"
+        app:layout_constraintVertical_bias="0.0"
+        android:onClick="@{() -> viewModel.onClickDay(12)}"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
