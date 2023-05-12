@@ -46,49 +46,38 @@ class GroupListRepository(private val database:GroupListDatabase) {
         }
     }
 
-    suspend fun insertGroupWord(word:GroupWord): Long{
-        return withContext(Dispatchers.IO) {
-            database.groupDao.insertGroupWord(word)
-        }
-    }
-    suspend fun deleteGroupWord(word:GroupWord) {
-        return withContext(Dispatchers.IO) {
-            database.groupDao.deleteGroupWord(word)
-        }
-    }
-
-    suspend fun selectAllGroupWord(): List<GroupWord> {
-        return withContext(Dispatchers.IO) {
-            database.groupDao.selectAllGroupWord()
-        }
-    }
-
-    fun getAllGroupWord(): LiveData<List<Group>>{
-        return database.groupDao.getAllGroupWord()
-    }
-
-    suspend fun findByGroupWordInWord(id: Int): Word{
-        return withContext(Dispatchers.IO) {
-            database.groupDao.findByGroupWordInWord(id)
-        }
-    }
-
-    suspend fun findByGroupidInGroupWord(groupid: Int): Int {
-        return withContext(Dispatchers.IO) {
-            database.groupDao.findByGroupidInGroupWord(groupid)
-        }
-    }
-
-    suspend fun findByGroupWord(groupid: Int): Int {
-        return withContext(Dispatchers.IO) {
-            database.groupDao.findByGroupWord(groupid)
-        }
-    }
-    suspend fun getCountGroupWord(groupid: Int): Int {
-        return withContext(Dispatchers.IO) {
-            database.groupDao.getCountGroupWord(groupid)
-        }
-    }
+//    suspend fun insertGroupWord(word:GroupWord): Long{
+//        return withContext(Dispatchers.IO) {
+//            database.groupDao.insertGroupWord(word)
+//        }
+//    }
+//    suspend fun deleteGroupWord(word:GroupWord) {
+//        return withContext(Dispatchers.IO) {
+//            database.groupDao.deleteGroupWord(word)
+//        }
+//    }
+//
+//    suspend fun selectAllGroupWord(): List<GroupWord> {
+//        return withContext(Dispatchers.IO) {
+//            database.groupDao.selectAllGroupWord()
+//        }
+//    }
+//
+//    fun getAllGroupWord(): LiveData<List<Group>>{
+//        return database.groupDao.getAllGroupWord()
+//    }
+//
+//    suspend fun findByGroupidInGroupWord(groupid: Int): Int {
+//        return withContext(Dispatchers.IO) {
+//            database.groupDao.findByGroupidInGroupWord(groupid)
+//        }
+//    }
+//
+//    suspend fun getCountGroupWord(groupid: Int): Int {
+//        return withContext(Dispatchers.IO) {
+//            database.groupDao.getCountGroupWord(groupid)
+//        }
+//    }
 }
 /*
     suspend fun InsertGroupWord(word:GroupWord){

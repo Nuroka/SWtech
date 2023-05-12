@@ -11,11 +11,11 @@ data class Group (
     ){
 
     companion object{
-        fun make(id: Int, title:String){
-            Group(id, title)
+        fun make(id: Int, title:String):Group {
+            return Group(id, title)
         }
-        fun make(title: String){
-            Group(0, title)
+        fun make(title: String):Group {
+            return Group(0, title)
         }
     }
 }

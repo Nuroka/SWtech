@@ -1,5 +1,6 @@
 package com.example.wordbook.grouplist
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,8 +13,7 @@ class GroupListBaseFragment : Fragment() {
 
     companion object{
         const val GROUP_LIST_FRAGMENT_CONTAINER_ID = R.id.group_list_container_view
-
-        fun newInstane() = GroupListBaseFragment()
+        fun newInstance() = GroupListBaseFragment()
     }
 
     private lateinit var backPressCallback: OnBackPressedCallback
@@ -34,6 +34,12 @@ class GroupListBaseFragment : Fragment() {
         }
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        requireActivity().onBackPressedDispatcher.addCallback(this, getBackPressCallback())
+    }
+
     override fun onDetach() {
         super.onDetach()
 
@@ -48,13 +54,12 @@ class GroupListBaseFragment : Fragment() {
     }
 
     private fun getBackPressCallback(): OnBackPressedCallback{
-        if(::backPressCallback.isInitialized) {
+        if(!::backPressCallback.isInitialized) {
             backPressCallback = object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
                     val currentFragment = childFragmentManager.findFragmentById(
                         GROUP_LIST_FRAGMENT_CONTAINER_ID
                     )
-
                     if (currentFragment is GroupListFragment) {
                         destroy()
                     }

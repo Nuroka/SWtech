@@ -5,6 +5,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.example.wordbook.R
+import com.example.wordbook.database.Group
 import com.example.wordbook.database.Word
 import com.example.wordbook.study.StudyViewModel
 import com.example.wordbook.test.TestViewModel
@@ -22,6 +23,14 @@ fun TextView.setMeans(word: Word?) {
         it.means
     } ?: ""
 }
+
+@BindingAdapter("grouptitle")
+fun TextView.setGroupTitle(group: Group?) {
+    text = group?.let {
+        it.grouptitle
+    } ?: ""
+}
+
 
 @BindingAdapter("studyEnglishVisibility")
 fun TextView.setStudyEnglishVisibility(studyType: StudyViewModel.StudyType) {

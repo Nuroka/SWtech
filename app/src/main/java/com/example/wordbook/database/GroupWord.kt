@@ -20,11 +20,12 @@ data class GroupWord (
     val word_id: Int,
     //group 연결 연산을 위해 사용함
     var groupid_base_groupword: Int,
-    var groupword: Word
+    var groupWordEnglish: String,
+    var groupWordMeans: String
 ){
     companion object{
-        fun make(word_id: Int, groupid_base_groupword: Int, word:Word){
-            GroupWord(word_id, groupid_base_groupword, word)
+        fun make(word_id: Int, groupid_base_groupword: Int, groupWordEnglish: String, groupWordMeans: String): GroupWord{
+            return GroupWord(word_id, groupid_base_groupword, groupWordEnglish, groupWordMeans)
         }
     }
 }

@@ -11,9 +11,9 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentManager
 import com.example.wordbook.BaseActivity
-import com.example.wordbook.grouplist.GroupListFragment
 import com.example.wordbook.R
 import com.example.wordbook.databinding.FragmentMainBinding
+import com.example.wordbook.grouplist.GroupListBaseFragment
 import com.example.wordbook.study.StudyFragment
 import com.example.wordbook.test.TestFragment
 import com.example.wordbook.vocalist.VocaListBaseFragment
@@ -114,7 +114,7 @@ class MainFragment : Fragment() {
         supportFragmentManager
             .beginTransaction()
             .setReorderingAllowed(true)
-            .replace(BaseActivity.FRAGMENT_CONTAINER_ID, GroupListFragment.newInstance())
+            .replace(BaseActivity.FRAGMENT_CONTAINER_ID, GroupListBaseFragment.newInstance())
             .addToBackStack(null)
             .commit()
     }
