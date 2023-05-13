@@ -73,12 +73,6 @@ class GroupWordFragment : Fragment() {
 //            }
 //        }
 
-        //취소 버튼
-        binding.backBtn.setOnClickListener{
-            destroy()
-        }
-
-
         viewModel.groupWordList.observe(viewLifecycleOwner){
             //어답터 구현하고 오류 뜨는지 확인 필요
             adapter.submitList(it)
@@ -113,34 +107,5 @@ class GroupWordFragment : Fragment() {
             .setReorderingAllowed(true)
             .addToBackStack(null)
             .commit()
-    }
-
-    // 이게 필요할지 모르겠음.... 오류걸릴 것 같은데 확인 필요
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-
-        requireActivity().onBackPressedDispatcher.addCallback(this, getBackPressCallback())
-    }
-
-    override fun onDetach() {
-        super.onDetach()
-
-        getBackPressCallback().remove()
-    }
-
-    private fun getBackPressCallback(): OnBackPressedCallback {
-        if (!::backPressCallback.isInitialized) {
-            backPressCallback = object : OnBackPressedCallback(true) {
-                override fun handleOnBackPressed() {
-                    destroy()
-                }
-            }
-        }
-        return backPressCallback
-    }
-
-
-    private fun destroy(){
-        parentFragmentManager.popBackStack()
     }
 }
