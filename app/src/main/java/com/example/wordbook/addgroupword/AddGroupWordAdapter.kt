@@ -16,7 +16,7 @@ class AddGroupWordAdapter() : ListAdapter<Word, AddGroupWordAdapter.AddGroupWord
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddGroupWordViewHolder {
         return AddGroupWordViewHolder.from(parent)
     }
-
+//
     override fun onBindViewHolder(holder: AddGroupWordViewHolder, position: Int) {
 
         holder.binding.word = getItem(position)
