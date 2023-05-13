@@ -11,6 +11,7 @@ import com.example.wordbook.R
 
 class GroupListBaseFragment : Fragment() {
 
+    //일단 베이스 프래그먼트에서 베이스 프래그먼트 생성
     companion object{
         const val GROUP_LIST_FRAGMENT_CONTAINER_ID = R.id.group_list_container_view
         fun newInstance() = GroupListBaseFragment()
@@ -28,7 +29,8 @@ class GroupListBaseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        //view 생성함. 만약 인스턴스가 안전하게 생성되었으면
+        //GroupListFragment 생성함.
         if(savedInstanceState==null){
             openGroupListFragment()
         }
@@ -46,6 +48,7 @@ class GroupListBaseFragment : Fragment() {
         getBackPressCallback().remove()
     }
 
+    //여기서 그룹 프래먼트 생성하는 것 같음.
     private fun openGroupListFragment(){
         childFragmentManager.beginTransaction()
             .replace(GROUP_LIST_FRAGMENT_CONTAINER_ID, GroupListFragment.newInstance())

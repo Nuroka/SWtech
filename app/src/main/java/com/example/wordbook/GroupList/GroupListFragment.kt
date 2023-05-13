@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wordbook.R
 import com.example.wordbook.database.Group
 import com.example.wordbook.databinding.FragmentGroupListBinding
+import com.example.wordbook.groupword.GroupWordBaseFragment
 import com.example.wordbook.groupword.GroupWordFragment
 import com.example.wordbook.register.RegisterGroupFragment
 
@@ -35,13 +36,9 @@ class GroupListFragment : Fragment() {
         binding.viewModel = viewModel
 
         binding.grouplistItem.layoutManager = LinearLayoutManager(requireContext())
-        //adapter 부분 수정하기.
-
         adapter = GroupListAdapter(::moveToGroup)
         binding.grouplistItem.adapter = adapter
 
-
-        //삭제 버튼.
         binding.addGroupBtn.setOnClickListener{
             moveToRegisterGroup()
         }
@@ -50,8 +47,6 @@ class GroupListFragment : Fragment() {
         // 이놈이 그거다 얘가 전달 받아서 뷰 제출하는 거네
         // 그럼 일단 다 생성하고 그다음에 data따라 달라지도록 수정하는 걸로 하자.
         viewModel.groups.observe(viewLifecycleOwner){
-            //it 람다 -> 함수 인자 말함. 그럼 함수 인자가 잘못되어 있다는 것 같은데
-            //
             adapter.submitList(it)
         }
 
@@ -72,15 +67,15 @@ class GroupListFragment : Fragment() {
 
     // 단어장 클릭 시 그룹으로 이동
     private fun moveToGroup(group: Group){
+        //main과 비교했을 때 parent프래그먼트 매니저는 메인 액티비티에서 시작할 때 쓰는 거라 상관 없을 듯.
         parentFragmentManager.beginTransaction()
             .replace(
                 GroupListBaseFragment.GROUP_LIST_FRAGMENT_CONTAINER_ID,
                 //이건 좀 고려를 해봐야할 듯, 어떻게 넘어가야할지.
-                GroupWordFragment.newInstance(group.groupid)
+                GroupWordBaseFragment.newInstance(group.groupid)
             )
             .setReorderingAllowed(true)
             .addToBackStack(null)
             .commit()
     }
-
 }

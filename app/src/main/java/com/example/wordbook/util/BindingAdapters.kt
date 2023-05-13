@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.example.wordbook.R
 import com.example.wordbook.database.Group
+import com.example.wordbook.database.GroupWord
 import com.example.wordbook.database.Word
 import com.example.wordbook.study.StudyViewModel
 import com.example.wordbook.test.TestViewModel
@@ -31,6 +32,19 @@ fun TextView.setGroupTitle(group: Group?) {
     } ?: ""
 }
 
+@BindingAdapter("meansgroupword")
+fun TextView.setMeansgroupword(groupword: GroupWord?) {
+    text = groupword?.let {
+        it.groupWordMeans
+    } ?: ""
+}
+
+@BindingAdapter("englishgroupword")
+fun TextView.setEnglishgroupword(groupword: GroupWord?) {
+    text = groupword?.let {
+        it.groupWordEnglish
+    } ?: ""
+}
 
 @BindingAdapter("studyEnglishVisibility")
 fun TextView.setStudyEnglishVisibility(studyType: StudyViewModel.StudyType) {

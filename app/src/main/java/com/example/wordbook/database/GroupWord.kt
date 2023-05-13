@@ -29,13 +29,3 @@ data class GroupWord (
         }
     }
 }
-
-/*,
-        ForeignKey(
-            entity = Word::class,
-            ParentColums = arrayOf("id"),
-            childColumns = arrayOf("word_id"),
-            onDelete = ForeignKey.CASCADE
-        )
-
-         */

@@ -19,6 +19,7 @@ private const val ARG_VOCA_ID = "voca_id"
 
 class EditVocaFragment : Fragment() {
 
+    //edit에서 new 인스턴스 생성함. -> ViewModel
     companion object {
         fun newInstance(vocaId: Int): EditVocaFragment {
             val fragment = EditVocaFragment()
@@ -49,6 +50,8 @@ class EditVocaFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory).get(EditVocaViewModel::class.java)
 
         viewModel.state.observe(viewLifecycleOwner) {
+            //word 있으면 해당 값을 이걸로 바꾸어라 임... 근데 이건 word LIst에서는 어답터에서 처리해야함 그래서 걍
+            //어답터에서 생성, 확인하면 될 것 같다. 만약 오류 나면 여기가 문제 인것
             when (it) {
                 is EditVocaViewModelState.Ready -> binding.word = it.word
 //                is EditVocaViewModelState.Loading -> Toast.makeText(this, "loading", Toast.LENGTH_SHORT).show()

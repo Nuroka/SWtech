@@ -5,37 +5,45 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wordbook.R
 import com.example.wordbook.databinding.FragmentGroupWordBinding
+import com.example.wordbook.grouplist.GroupListAdapter
+
+private const val ARG_GROUP_ID = "group_id"
 
 class GroupWordFragment : Fragment() {
-
-    //인스턴스 생성
     companion object{
-        fun newInstance() = GroupWordFragment()
+        fun newInstance(groupId: Int): GroupWordFragment{
+            val fragment = GroupWordFragment()
+            val args = Bundle()
+            args.putInt(ARG_GROUP_ID, groupId)
+            fragment.arguments = args
+
+            return fragment
+        }
     }
 
-    //viewModel 구현 필요
-    private lateinit var viewModel: GroupWordViewModel
-    //xml data binding 연결 구현 필요
     private lateinit var binding: FragmentGroupWordBinding
-    //GroupWord Adapter 구현 필요
-    //private lateinit var adapter: GroupWordAdapter
+    private lateinit var viewModel: GroupWordViewModel
+    private lateinit var adapter: GroupWordAdapter
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_group_word,container, false)
+
+        val mGordId = arguments?.let {
+            it.getInt(ARG_GROUP_ID)
+        } ?: -1
+
+        binding = DataBindingUtil.inflate(
+            inflater, R.layout.fragment_voca_list, container, false)
         viewModel = ViewModelProvider(this).get(GroupWordViewModel::class.java)
-
         binding.viewModel = viewModel
-        //data바인딩 필요
-
 
         return binding.root
     }
-
 }

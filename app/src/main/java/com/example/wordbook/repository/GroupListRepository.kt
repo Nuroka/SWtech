@@ -12,7 +12,7 @@ import kotlinx.coroutines.withContext
 
 class GroupListRepository(private val database:GroupListDatabase) {
     //GroupDao에 GroupWord 선언 -> GroupWord list 반환하는 함수도 사용할 것.
-    fun getGroupListByLiveData():LiveData<List<Group>>{
+    fun getGroupListByLiveData(): LiveData<List<Group>> {
         return database.groupDao.getAllGroup()
     }
 
@@ -46,38 +46,30 @@ class GroupListRepository(private val database:GroupListDatabase) {
         }
     }
 
-//    suspend fun insertGroupWord(word:GroupWord): Long{
-//        return withContext(Dispatchers.IO) {
-//            database.groupDao.insertGroupWord(word)
-//        }
-//    }
-//    suspend fun deleteGroupWord(word:GroupWord) {
-//        return withContext(Dispatchers.IO) {
-//            database.groupDao.deleteGroupWord(word)
-//        }
-//    }
-//
-//    suspend fun selectAllGroupWord(): List<GroupWord> {
-//        return withContext(Dispatchers.IO) {
-//            database.groupDao.selectAllGroupWord()
-//        }
-//    }
-//
-//    fun getAllGroupWord(): LiveData<List<Group>>{
-//        return database.groupDao.getAllGroupWord()
-//    }
-//
-//    suspend fun findByGroupidInGroupWord(groupid: Int): Int {
-//        return withContext(Dispatchers.IO) {
-//            database.groupDao.findByGroupidInGroupWord(groupid)
-//        }
-//    }
-//
-//    suspend fun getCountGroupWord(groupid: Int): Int {
-//        return withContext(Dispatchers.IO) {
-//            database.groupDao.getCountGroupWord(groupid)
-//        }
-//    }
+
+    //Group Word Data 처리하는 함수
+
+    suspend fun insertGroupWord(word: GroupWord): Long {
+        return withContext(Dispatchers.IO) {
+            database.groupDao.insertGroupWord(word)
+        }
+    }
+
+    suspend fun deleteGroupWord(word: GroupWord) {
+        return withContext(Dispatchers.IO) {
+            database.groupDao.deleteGroupWord(word)
+        }
+    }
+
+    suspend fun selectAllGroupWordList(groupid: Int): List<GroupWord> {
+        return withContext(Dispatchers.IO) {
+            database.groupDao.selectAllGroupWordList(groupid)
+        }
+    }
+
+    fun getAllGroupWordList(groupid: Int): LiveData<List<GroupWord>> {
+        return database.groupDao.getAllGroupWordList(groupid)
+    }
 }
 /*
     suspend fun InsertGroupWord(word:GroupWord){
