@@ -18,8 +18,8 @@ class GroupWordViewModel(application: Application, val mGroupId: Int):ViewModel(
     val groupWordList = repository.getAllGroupWordList(mGroupId)
 
     //현재 화면에 필요한 data 처리 -> 그룹 삭제밖에 없음.
-    fun deleteGroup(groupId: Int) {
-        val group = repository.findById(groupId)
-        repository.deletegroup(group)
+    suspend fun deleteGroup(groupId: Int) {
+        val group = repository.findByGroup(groupId)
+        return repository.deletegroup(group)
     }
 }

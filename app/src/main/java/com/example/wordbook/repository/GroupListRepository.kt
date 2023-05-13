@@ -34,7 +34,7 @@ class GroupListRepository(private val database:GroupListDatabase) {
         }
     }
 
-    fun findById(id: Int): Group {
+    suspend fun findByGroup(id: Int): Group {
         return withContext(Dispatchers.IO) {
             database.groupDao.findById(id)
         }
@@ -69,6 +69,12 @@ class GroupListRepository(private val database:GroupListDatabase) {
 
     fun getAllGroupWordList(groupid: Int): LiveData<List<GroupWord>> {
         return database.groupDao.getAllGroupWordList(groupid)
+    }
+
+    suspend fun findGroupWordbyId(id: Int): GroupWord {
+        return withContext(Dispatchers.IO) {
+            database.groupDao.findGroupWordbyId(id)
+        }
     }
 }
 /*

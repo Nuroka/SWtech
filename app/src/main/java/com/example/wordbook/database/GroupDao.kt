@@ -28,7 +28,9 @@ interface GroupDao {
      * 2. word 삭제
      * 3. GroupId 이용해서 GroupId가진 wordList 생성
      * 4. GroupId 이용해서 GroupId가진 wordLiveData
-     * 5. word 개수 세는 count 함수 - 필요할 시 구현하기.
+     * 5. groupword id 이용해 groupword객체 반환하는 함수
+     *
+     * 6. word 개수 세는 count 함수 - 필요할 시 구현하기.
      */
 
     @Insert
@@ -42,4 +44,7 @@ interface GroupDao {
 
     @Query("select * from groupwords WHERE groupid_base_groupword = :groupid")
     fun getAllGroupWordList(groupid: Int): LiveData<List<GroupWord>>
+
+    @Query("select * from groupwords WHERE word_id = :word_id")
+    fun findGroupWordbyId(word_id: Int): GroupWord
 }
