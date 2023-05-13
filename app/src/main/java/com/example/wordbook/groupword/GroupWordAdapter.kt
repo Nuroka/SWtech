@@ -48,6 +48,7 @@ class GroupWordAdapter(val onMoveToGroupInfo:(groupword: GroupWord)->Unit) : Lis
                 )
             }
         }
+
     }
     class GroupWordClickListener(val onMoveToGroupInfo: (groupword: GroupWord) -> Unit){
         fun onGroupWordClick(groupword: GroupWord) = onMoveToGroupInfo(groupword)

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wordbook.R
 import com.example.wordbook.database.Group
@@ -14,6 +15,7 @@ import com.example.wordbook.databinding.FragmentGroupListBinding
 import com.example.wordbook.groupword.GroupWordBaseFragment
 import com.example.wordbook.groupword.GroupWordFragment
 import com.example.wordbook.register.RegisterGroupFragment
+import kotlinx.coroutines.launch
 
 class GroupListFragment : Fragment() {
 
@@ -36,7 +38,7 @@ class GroupListFragment : Fragment() {
         binding.viewModel = viewModel
 
         binding.grouplistItem.layoutManager = LinearLayoutManager(requireContext())
-        adapter = GroupListAdapter(::moveToGroup)
+        adapter = GroupListAdapter(::moveToGroup,::DeleteToGroup)
         binding.grouplistItem.adapter = adapter
 
         binding.addGroupBtn.setOnClickListener{
@@ -77,5 +79,11 @@ class GroupListFragment : Fragment() {
             .setReorderingAllowed(true)
             .addToBackStack(null)
             .commit()
+    }
+
+    private fun DeleteToGroup(group:Group){
+        lifecycleScope.launch {
+            viewModel.deleteGroup(group.groupid)
+        }
     }
 }

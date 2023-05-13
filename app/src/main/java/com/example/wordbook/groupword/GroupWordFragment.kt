@@ -2,12 +2,15 @@ package com.example.wordbook.groupword
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,6 +18,8 @@ import com.example.wordbook.R
 import com.example.wordbook.addgroupword.AddGroupWordBaseFragment
 import com.example.wordbook.database.GroupWord
 import com.example.wordbook.databinding.FragmentGroupWordBinding
+import com.example.wordbook.grouplist.GroupListBaseFragment
+import com.example.wordbook.grouplist.GroupListFragment
 import com.example.wordbook.groupwordinfo.GroupWordInfoFragment
 import kotlinx.coroutines.launch
 
@@ -37,8 +42,6 @@ class GroupWordFragment : Fragment() {
     private lateinit var binding: FragmentGroupWordBinding
     private lateinit var viewModel: GroupWordViewModel
     private lateinit var adapter: GroupWordAdapter
-
-    private lateinit var backPressCallback: OnBackPressedCallback
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -64,14 +67,9 @@ class GroupWordFragment : Fragment() {
         binding.addGroupWordBtn.setOnClickListener{
             moveToAddGroupWord(mGroupId)
         }
+        binding.groupDeleteBtn.setOnClickListener{
 
-        //그룹 삭제 버튼
-//           binding.groupDeleteBtn.setOnClickListener{
-//            lifecycleScope.launch {
-//                viewModel.deleteGroup(mGroupId)
-//                destroy()
-//            }
-//        }
+        }
 
         viewModel.groupWordList.observe(viewLifecycleOwner){
             //어답터 구현하고 오류 뜨는지 확인 필요
@@ -107,5 +105,7 @@ class GroupWordFragment : Fragment() {
             .setReorderingAllowed(true)
             .addToBackStack(null)
             .commit()
+        parentFragmentManager.popBackStack()
     }
+
 }

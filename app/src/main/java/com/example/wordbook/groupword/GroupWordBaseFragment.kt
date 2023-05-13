@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
+import androidx.fragment.app.FragmentManager
 import com.example.wordbook.R
 import com.example.wordbook.grouplist.GroupListBaseFragment
 import com.example.wordbook.grouplist.GroupListFragment
@@ -78,9 +79,9 @@ class GroupWordBaseFragment : Fragment() {
             backPressCallback = object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
                     val currentFragment = childFragmentManager.findFragmentById(
-                        GroupListBaseFragment.GROUP_LIST_FRAGMENT_CONTAINER_ID
+                        GROUP_WORD_FRAGMENT_CONTAINER_ID
                     )
-                    if (currentFragment is GroupListFragment) {
+                    if (currentFragment is GroupWordFragment) {
                         destroy()
                     }
                 }
