@@ -76,7 +76,7 @@ class GroupListFragment : Fragment() {
             .replace(
                 GroupListBaseFragment.GROUP_LIST_FRAGMENT_CONTAINER_ID,
                 //이건 좀 고려를 해봐야할 듯, 어떻게 넘어가야할지.
-                GroupWordFragment.newInstance()
+                GroupWordFragment.newInstance(group.groupid)
             )
             .setReorderingAllowed(true)
             .addToBackStack(null)
