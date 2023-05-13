@@ -34,7 +34,7 @@ class GroupListRepository(private val database:GroupListDatabase) {
         }
     }
 
-    suspend fun findById(id: Int): Group {
+    fun findById(id: Int): Group {
         return withContext(Dispatchers.IO) {
             database.groupDao.findById(id)
         }

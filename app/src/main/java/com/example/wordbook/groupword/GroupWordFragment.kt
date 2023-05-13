@@ -1,5 +1,6 @@
 package com.example.wordbook.groupword
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,11 +9,16 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wordbook.R
+import com.example.wordbook.database.Word
 import com.example.wordbook.databinding.FragmentGroupWordBinding
+import com.example.wordbook.edit.EditVocaFragment
 import com.example.wordbook.edit.EditVocaViewModelFactory
 import com.example.wordbook.grouplist.GroupListAdapter
+import com.example.wordbook.vocalist.VocaListBaseFragment
+import kotlinx.coroutines.launch
 
 private const val ARG_GROUP_ID = "group_id"
 
@@ -31,6 +37,8 @@ class GroupWordFragment : Fragment() {
     private lateinit var binding: FragmentGroupWordBinding
     private lateinit var viewModel: GroupWordViewModel
     private lateinit var adapter: GroupWordAdapter
+
+    private lateinit var backPressCallback: OnBackPressedCallback
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -59,12 +67,15 @@ class GroupWordFragment : Fragment() {
 
         //그룹 삭제 버튼
         binding.groupDeleteBtn.setOnClickListener{
-
+            lifecycleScope.launch {
+            viewModel.deleteGroup(mGroupId)
+            destroy()
+            }
         }
 
         //취소 버튼
         binding.backBtn.setOnClickListener{
-
+            destroy()
         }
 
 
@@ -77,4 +88,45 @@ class GroupWordFragment : Fragment() {
     }
 
     //프래그먼트 이동 정의
+
+    private fun moveToAddGroupWord(groupId: Int) {
+        //Edit으로 가면 값을 저장하고 이 다음을 실행
+        parentFragmentManager.beginTransaction()
+            .replace(
+                VocaListBaseFragment.VOCA_LIST_FRAGMENT_CONTAINER_ID,
+                EditVocaFragment.newInstance(word.id)
+            )
+            .setReorderingAllowed(true)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    // 이게 필요할지 모르겠음.... 오류걸릴 것 같은데 확인 필요
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        requireActivity().onBackPressedDispatcher.addCallback(this, getBackPressCallback())
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+
+        getBackPressCallback().remove()
+    }
+
+    private fun getBackPressCallback(): OnBackPressedCallback {
+        if (!::backPressCallback.isInitialized) {
+            backPressCallback = object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    destroy()
+                }
+            }
+        }
+        return backPressCallback
+    }
+
+
+    private fun destroy(){
+        parentFragmentManager.popBackStack()
+    }
 }
