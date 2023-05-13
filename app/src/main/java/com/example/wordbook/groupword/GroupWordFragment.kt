@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wordbook.R
+import com.example.wordbook.addgroupword.AddGroupWordBaseFragment
 import com.example.wordbook.database.GroupWord
 import com.example.wordbook.databinding.FragmentGroupWordBinding
 import com.example.wordbook.groupwordinfo.GroupWordInfoFragment
@@ -50,7 +51,7 @@ class GroupWordFragment : Fragment() {
         val viewModelFactory = GroupWordViewModelFactory(requireActivity().application, mGroupId)
 
         binding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_voca_list, container, false)
+            inflater, R.layout.fragment_group_word, container, false)
         viewModel = ViewModelProvider(this, viewModelFactory).get(GroupWordViewModel::class.java)
         binding.viewModel = viewModel
 
@@ -61,16 +62,16 @@ class GroupWordFragment : Fragment() {
 
         //클릭 감지 -> button
         binding.addGroupWordBtn.setOnClickListener{
-            moveToRegisterGroupWord(mGroupId)
+            moveToAddGroupWord(mGroupId)
         }
 
         //그룹 삭제 버튼
-        binding.groupDeleteBtn.setOnClickListener{
-            lifecycleScope.launch {
-                viewModel.deleteGroup(mGroupId)
-                destroy()
-            }
-        }
+//           binding.groupDeleteBtn.setOnClickListener{
+//            lifecycleScope.launch {
+//                viewModel.deleteGroup(mGroupId)
+//                destroy()
+//            }
+//        }
 
         //취소 버튼
         binding.backBtn.setOnClickListener{
@@ -89,11 +90,11 @@ class GroupWordFragment : Fragment() {
     //프래그먼트 이동 정의
 
     //추가 버튼 누를 시 단어장에 단어 추가 프래그먼트로 이동
-    private fun moveToRegisterGroupWord(groupId: Int){
+    private fun moveToAddGroupWord(groupId: Int){
         parentFragmentManager.beginTransaction()
             .replace(
                 GroupWordBaseFragment.GROUP_WORD_FRAGMENT_CONTAINER_ID,
-                RegisterGroupWordFragment.newInstance(groupId)
+                AddGroupWordBaseFragment.newInstance(groupId)
             )
             .setReorderingAllowed(true)
             .addToBackStack(null)

@@ -10,6 +10,7 @@ import com.example.wordbook.R
 import com.example.wordbook.database.Group
 import com.example.wordbook.database.GroupWord
 import com.example.wordbook.databinding.ViewholderGroupBinding
+import com.example.wordbook.databinding.ViewholderGroupwordBinding
 
 class GroupWordAdapter(val onMoveToGroupInfo:(groupword: GroupWord)->Unit) : ListAdapter<GroupWord, GroupWordAdapter.GroupWordViewHolder>(GroupWordDiffCallback()){
 
@@ -18,8 +19,8 @@ class GroupWordAdapter(val onMoveToGroupInfo:(groupword: GroupWord)->Unit) : Lis
     }
 
     override fun onBindViewHolder(holder: GroupWordViewHolder, position: Int) {
-        //holder.binding.grouptitle = getItem(position)
-        //holder.binding.onClickGroup = GroupClickListener(onMoveToGroup)
+        holder.binding.groupword = getItem(position)
+        holder.binding.onClickGroupWord = GroupWordClickListener(onMoveToGroupInfo)
     }
 
 
@@ -33,7 +34,7 @@ class GroupWordAdapter(val onMoveToGroupInfo:(groupword: GroupWord)->Unit) : Lis
         }
     }
 
-    class GroupWordViewHolder private constructor(val binding: ViewholderGroupBinding) :
+    class GroupWordViewHolder private constructor(val binding: ViewholderGroupwordBinding) :
         RecyclerView.ViewHolder(binding.root) {
         companion object {
             fun from(parent: ViewGroup): GroupWordViewHolder {
