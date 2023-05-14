@@ -22,5 +22,8 @@ interface GroupWordDao{
 
     @Query("select * from groupwords WHERE word_id = :word_id")
     fun findGroupWordbyId(word_id: Int): GroupWord
+    //group id 전달 필요
+    @Query("SELECT * FROM groupwords WHERE (groupWordEnglish LIKE '%' || :searchKeyword || '%' OR groupWordMeans LIKE '%' || :searchKeyword || '%') AND groupid_base_groupword = :groupid  ")
+    suspend fun searchWords(searchKeyword: String, groupid: Int): List<GroupWord>
 
 }

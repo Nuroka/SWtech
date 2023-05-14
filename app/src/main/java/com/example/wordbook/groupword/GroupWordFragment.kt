@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.databinding.adapters.SearchViewBindingAdapter.setOnQueryTextListener
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -67,6 +68,19 @@ class GroupWordFragment : Fragment() {
             adapter.submitList(it)
         }
 
+        // SearchView 초기화
+        binding.searchGroupWord.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                // 검색어가 변경될 때마다 호출됨.
+                performSearch(newText)
+                return true
+            }
+        })
+
         return binding.root
     }
 
@@ -88,4 +102,9 @@ class GroupWordFragment : Fragment() {
             viewModel.deleteGroupWord(groupword)
         }
     }
+
+    private fun performSearch(query: String) {
+        viewModel.searchWords(query) // Room 데이터베이스 쿼리 실행
+    }
+
 }

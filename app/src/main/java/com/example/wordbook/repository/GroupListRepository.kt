@@ -76,6 +76,17 @@ class GroupListRepository(private val database:GroupListDatabase) {
             database.groupwordDao.findGroupWordbyId(id)
         }
     }
+
+    suspend fun getWordList(groupid:Int): List<GroupWord> {
+        return withContext(Dispatchers.IO) {
+            database.groupwordDao.selectAllGroupWordList(groupid)
+        }
+    }
+    suspend fun searchWords(searchKeyword: String, groupid: Int): List<GroupWord> {
+        return withContext(Dispatchers.IO) {
+            database.groupwordDao.searchWords(searchKeyword, groupid)
+        }
+    }
 }
 /*
     suspend fun InsertGroupWord(word:GroupWord){
