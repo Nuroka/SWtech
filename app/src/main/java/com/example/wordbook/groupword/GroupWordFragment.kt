@@ -1,6 +1,7 @@
 package com.example.wordbook.groupword
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -42,6 +43,7 @@ class GroupWordFragment : Fragment() {
         val mGroupId = arguments?.let {
             it.getInt(ARG_GROUP_ID)
         } ?: -1
+        Log.d("addfrag1", "groupId : $mGroupId")
 
         val viewModelFactory = GroupWordViewModelFactory(requireActivity().application, mGroupId)
 

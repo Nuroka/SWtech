@@ -10,6 +10,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 @Database(entities = [Group::class, GroupWord::class], version = 1)
 abstract class GroupListDatabase: RoomDatabase(){
     abstract val groupDao: GroupDao
+    abstract val groupwordDao: GroupWordDao
 }
 
 private const val DATABASE_NAME = "groups.db"

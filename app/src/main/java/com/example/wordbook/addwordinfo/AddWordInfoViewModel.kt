@@ -34,7 +34,7 @@ class AddWordInfoViewModel(application: Application, val mWordId: Int, val mGrou
             return -1
         }
         val word = repositoryWord.findById(mWordId)
-        return repositoryGroup.insertGroupWord(GroupWord.make(word.id, mGroupId, word.english, word.means))
+        return repositoryGroup.insertGroupWord(GroupWord.make(mGroupId, word.english, word.means))
     }
 
     //word Id 있는지 확인하는 작업

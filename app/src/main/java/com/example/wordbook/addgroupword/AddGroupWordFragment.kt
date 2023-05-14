@@ -1,6 +1,7 @@
 package com.example.wordbook.addgroupword
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -40,7 +41,8 @@ class AddGroupWordFragment : Fragment() {
         val mGroupId = arguments?.let {
             it.getInt(ARG_GROUP_ID)
         } ?: -1
-        //sendgroupid = mGroupId
+        sendgroupid = mGroupId
+        Log.d("addfrag2", "groupId : $mGroupId")
 
         val viewModelFactory = AddGroupWordViewModelFactory(requireActivity().application, mGroupId)
 
@@ -65,7 +67,7 @@ class AddGroupWordFragment : Fragment() {
     private fun MoveToWordInfo(word: Word){
         parentFragmentManager.beginTransaction()
             .replace(
-                GroupWordBaseFragment.GROUP_WORD_FRAGMENT_CONTAINER_ID,
+                AddGroupWordBaseFragment.ADD_GROUP_WORD_FRAGMENT_CONTAINER_ID,
                 AddWordInfoFragment.newInstance(word.id, sendgroupid)
             )
             .setReorderingAllowed(true)

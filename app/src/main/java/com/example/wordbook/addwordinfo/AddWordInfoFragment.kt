@@ -15,8 +15,8 @@ import com.example.wordbook.R
 import com.example.wordbook.databinding.FragmentAddWordInfoBinding
 import kotlinx.coroutines.launch
 
-private const val ARG_WORD_ID = "word_id"
-private const val ARG_GROUP_ID = "group_id"
+private const val ARG_WORD_ID = "word_id3"
+private const val ARG_GROUP_ID = "group_id3"
 
 class AddWordInfoFragment : Fragment() {
 

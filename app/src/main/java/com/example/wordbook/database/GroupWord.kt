@@ -27,5 +27,8 @@ data class GroupWord (
         fun make(word_id: Int, groupid_base_groupword: Int, groupWordEnglish: String, groupWordMeans: String): GroupWord{
             return GroupWord(word_id, groupid_base_groupword, groupWordEnglish, groupWordMeans)
         }
+        fun make(groupid_base_groupword: Int, groupWordEnglish: String,groupWordMeans: String): GroupWord{
+            return GroupWord(0, groupid_base_groupword, groupWordEnglish, groupWordMeans)
+        }
     }
 }

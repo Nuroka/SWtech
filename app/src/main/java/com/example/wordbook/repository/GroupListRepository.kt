@@ -51,29 +51,29 @@ class GroupListRepository(private val database:GroupListDatabase) {
 
     suspend fun insertGroupWord(word: GroupWord): Long {
         return withContext(Dispatchers.IO) {
-            database.groupDao.insertGroupWord(word)
+            database.groupwordDao.insertGroupWord(word)
         }
     }
 
     suspend fun deleteGroupWord(word: GroupWord) {
         return withContext(Dispatchers.IO) {
-            database.groupDao.deleteGroupWord(word)
+            database.groupwordDao.deleteGroupWord(word)
         }
     }
 
     suspend fun selectAllGroupWordList(groupid: Int): List<GroupWord> {
         return withContext(Dispatchers.IO) {
-            database.groupDao.selectAllGroupWordList(groupid)
+            database.groupwordDao.selectAllGroupWordList(groupid)
         }
     }
 
     fun getAllGroupWordList(groupid: Int): LiveData<List<GroupWord>> {
-        return database.groupDao.getAllGroupWordList(groupid)
+        return database.groupwordDao.getAllGroupWordList(groupid)
     }
 
     suspend fun findGroupWordbyId(id: Int): GroupWord {
         return withContext(Dispatchers.IO) {
-            database.groupDao.findGroupWordbyId(id)
+            database.groupwordDao.findGroupWordbyId(id)
         }
     }
 }
