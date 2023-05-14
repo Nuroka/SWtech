@@ -18,6 +18,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="179dp">
+
         <View
             android:id="@+id/view"
             android:layout_width="263dp"
@@ -41,20 +42,25 @@
             app:layout_constraintBottom_toBottomOf="@+id/view"
             app:layout_constraintStart_toStartOf="@+id/view"
             app:layout_constraintTop_toTopOf="@+id/view" />
-            <!--text에 grouptitle 표시 가능하도록 변수 선언 필요
-
-            -->
 
         <TextView
             android:id="@+id/deleteGroupBtn"
-            android:layout_width="55dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="12dp"
-            android:onClick="@{() -> onClickDeleteGroup.onClickDeleteGroup(grouptitle) }"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
             android:text="삭제"
+            android:onClick="@{() -> onClickDeleteGroup.onDeleteClick(grouptitle)}"
             android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/view"
-            tools:layout_editor_absoluteY="16dp" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.111" />
+        <!--text에 grouptitle 표시 가능하도록 변수 선언 필요
+
+        -->
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
 

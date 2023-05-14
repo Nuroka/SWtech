@@ -58,7 +58,7 @@ class GroupWordFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory).get(GroupWordViewModel::class.java)
         binding.viewModel = viewModel
 
-        //단어 상세 정보로 이동
+        //어답터에 상세 페이지 이동이 아닌  삭제 기능 추가하기.
         binding.groupwordlist.layoutManager = LinearLayoutManager(requireContext())
         adapter = GroupWordAdapter(::moveToGroupWordInfo)
         binding.groupwordlist.adapter = adapter
@@ -66,9 +66,6 @@ class GroupWordFragment : Fragment() {
         //클릭 감지 -> button
         binding.addGroupWordBtn.setOnClickListener{
             moveToAddGroupWord(mGroupId)
-        }
-        binding.groupDeleteBtn.setOnClickListener{
-
         }
 
         viewModel.groupWordList.observe(viewLifecycleOwner){

@@ -10,7 +10,7 @@ import com.example.wordbook.R
 import com.example.wordbook.database.Group
 import com.example.wordbook.databinding.ViewholderGroupBinding
 
-class GroupListAdapter (val onMoveToGroup: (group: Group) -> Unit): ListAdapter<Group, GroupListAdapter.GroupListViewHolder>(GroupDiffCallback()){
+class GroupListAdapter (val onMoveToGroup: (group: Group) -> Unit, val onDeleteGroup: (group: Group)->Unit): ListAdapter<Group, GroupListAdapter.GroupListViewHolder>(GroupDiffCallback()){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GroupListViewHolder {
         return GroupListViewHolder.from(parent)
@@ -23,11 +23,10 @@ class GroupListAdapter (val onMoveToGroup: (group: Group) -> Unit): ListAdapter<
     //get으로 id얻어서 객체를 LiveData 변환으로 뷰모델에서 얻어보면 됨.
     //얻은 후 방식 그대로 사용하기...
     override fun onBindViewHolder(holder: GroupListViewHolder, position: Int) {
-        //얘만 해결하고 나머지 구현 후 run 해보기.
         holder.binding.grouptitle = getItem(position)
         holder.binding.onClickGroup = GroupClickListener(onMoveToGroup)
-
-        //holder.binding.deleteGroupBtn.setOnClickListener(group:Group)
+        //그룹 삭제 구현
+        holder.binding.onClickDeleteGroup = DeleteClickListener(onDeleteGroup)
     }
 
 
@@ -61,5 +60,9 @@ class GroupListAdapter (val onMoveToGroup: (group: Group) -> Unit): ListAdapter<
     class GroupClickListener(val onMoveToGroup: (group: Group) -> Unit){
         //클릭해서 Group으로 이동하기 전에 word 설정하고 가기
         fun onGroupClick(group: Group) = onMoveToGroup(group)
+    }
+
+    class DeleteClickListener(val onDeleteGroup:(group:Group)->Unit){
+        fun onDeleteClick(group:Group) = onDeleteGroup(group)
     }
 }

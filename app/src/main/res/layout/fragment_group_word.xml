@@ -61,14 +61,6 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <Button
-                android:id="@+id/groupDeleteBtn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/black"
-                android:text="그룹 삭제" />
-
-            <Button
                 android:id="@+id/addGroupWordBtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
