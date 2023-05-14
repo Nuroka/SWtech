@@ -43,7 +43,7 @@ class GroupWordBaseFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         //view 생성함. 만약 인스턴스가 안전하게 생성되었으면
         //번들에서 값 꺼내고
-        //GroupListFragment 생성함.
+        //GroupWordFragment 생성함.
         if(savedInstanceState==null){
             //아규먼트 꺼내서 View- 그룹 워드 프래그먼트 생성함!
             val groupId = arguments?.let {

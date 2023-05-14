@@ -77,9 +77,8 @@ class AddGroupWordBaseFragment : Fragment() {
             backPressCallback = object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
                     val currentFragment = childFragmentManager.findFragmentById(
-                        GroupListBaseFragment.GROUP_LIST_FRAGMENT_CONTAINER_ID
-                    )
-                    if (currentFragment is GroupListFragment) {
+                        ADD_GROUP_WORD_FRAGMENT_CONTAINER_ID)
+                    if (currentFragment is AddGroupWordFragment) {
                         destroy()
                     }
                 }

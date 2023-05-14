@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="groupwordInfo"
-            type="com.example.wordbook.database.GroupWord" />
+            name="wordInfo"
+            type="com.example.wordbook.database.Word" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,7 +31,7 @@
             android:layout_height="34dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="@{groupwordInfo.groupWordEnglish}"
+            android:text="@{wordInfo.english}"
             app:layout_constraintBottom_toBottomOf="@id/englishInfo"
             app:layout_constraintLeft_toRightOf="@id/englishInfo"
             app:layout_constraintRight_toRightOf="parent"
@@ -54,7 +54,7 @@
             android:layout_width="342dp"
             android:layout_height="31dp"
             android:layout_marginRight="10dp"
-            android:text="@{groupwordInfo.groupWordMeans}"
+            android:text="@{wordInfo.means}"
             app:layout_constraintBottom_toBottomOf="@id/meansInfo"
             app:layout_constraintLeft_toRightOf="@id/englishInfo"
             app:layout_constraintRight_toRightOf="parent"
@@ -78,7 +78,7 @@
                 android:text="취소" />
 
             <Button
-                android:id="@+id/groupDeleteBtn"
+                android:id="@+id/wordInfoAddBtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

@@ -10,8 +10,8 @@ import com.example.wordbook.R
 import com.example.wordbook.database.Word
 import com.example.wordbook.databinding.ViewholderAddGroupwordBinding
 
-//추가...하기...
-class AddGroupWordAdapter() : ListAdapter<Word, AddGroupWordAdapter.AddGroupWordViewHolder>(AddGroupWordDiffCallback()){
+//어답터에서는 클릭을 눌렀을 때 해당 word로 가는 처리가 필요함.
+class AddGroupWordAdapter(val onMoveToWordInfo:(word:Word)->Unit) : ListAdapter<Word, AddGroupWordAdapter.AddGroupWordViewHolder>(AddGroupWordDiffCallback()){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddGroupWordViewHolder {
         return AddGroupWordViewHolder.from(parent)
@@ -20,7 +20,7 @@ class AddGroupWordAdapter() : ListAdapter<Word, AddGroupWordAdapter.AddGroupWord
     override fun onBindViewHolder(holder: AddGroupWordViewHolder, position: Int) {
 
         holder.binding.word = getItem(position)
-        holder.binding.onClickAddWord = AddGroupWordClickListener()
+        holder.binding.onClickAddWord = AddGroupWordClickListener(onMoveToWordInfo)
     }
 
 
@@ -49,9 +49,7 @@ class AddGroupWordAdapter() : ListAdapter<Word, AddGroupWordAdapter.AddGroupWord
             }
         }
     }
-    class AddGroupWordClickListener(){
-        fun onAddGroupWordClick(word: Word){
-//            //여기에 추가하기 구현.....+함수도 명시하기.
-        }
+    class AddGroupWordClickListener(val onMoveToWordInfo:(word: Word) -> Unit){
+        fun onAddGroupWordClick(word: Word) = onMoveToWordInfo(word)
     }
 }

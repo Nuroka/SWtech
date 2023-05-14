@@ -1,16 +1,11 @@
 package com.example.wordbook.groupword
 
-import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,9 +13,6 @@ import com.example.wordbook.R
 import com.example.wordbook.addgroupword.AddGroupWordBaseFragment
 import com.example.wordbook.database.GroupWord
 import com.example.wordbook.databinding.FragmentGroupWordBinding
-import com.example.wordbook.grouplist.GroupListBaseFragment
-import com.example.wordbook.grouplist.GroupListFragment
-import com.example.wordbook.groupwordinfo.GroupWordInfoFragment
 import kotlinx.coroutines.launch
 
 private const val ARG_GROUP_ID = "group_id"

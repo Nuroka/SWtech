@@ -9,13 +9,16 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wordbook.R
+import com.example.wordbook.addwordinfo.AddWordInfoFragment
+import com.example.wordbook.database.Word
 import com.example.wordbook.databinding.FragmentAddGroupWordBinding
+import com.example.wordbook.groupword.GroupWordBaseFragment
 
 
 private const val ARG_GROUP_ID = "group_id"
 
 class AddGroupWordFragment : Fragment() {
-
+    var sendgroupid = -1
     companion object{
         fun newInstance(groupId: Int): AddGroupWordFragment {
             val fragment = AddGroupWordFragment()
@@ -31,7 +34,6 @@ class AddGroupWordFragment : Fragment() {
     private lateinit var viewModel: AddGroupWordViewModel
     private lateinit var adapter: AddGroupWordAdapter
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,6 +41,7 @@ class AddGroupWordFragment : Fragment() {
         val mGroupId = arguments?.let {
             it.getInt(ARG_GROUP_ID)
         } ?: -1
+        sendgroupid = mGroupId
 
         val viewModelFactory = AddGroupWordViewModelFactory(requireActivity().application, mGroupId)
         binding = DataBindingUtil.inflate(
@@ -48,7 +51,7 @@ class AddGroupWordFragment : Fragment() {
 
         binding.wordlist.layoutManager = LinearLayoutManager(requireContext())
         //어답터 수정 필요
-        adapter = AddGroupWordAdapter()
+        adapter = AddGroupWordAdapter(::MoveToWordInfo)
         binding.wordlist.adapter = adapter
 
         viewModel.wordList.observe(viewLifecycleOwner){
@@ -58,7 +61,14 @@ class AddGroupWordFragment : Fragment() {
         return binding.root
     }
 
-//    private fun addWordInGroup(groupId: Int){
-//
-//    }
+    private fun MoveToWordInfo(word: Word){
+        parentFragmentManager.beginTransaction()
+            .replace(
+                GroupWordBaseFragment.GROUP_WORD_FRAGMENT_CONTAINER_ID,
+                AddWordInfoFragment.newInstance(word.id, sendgroupid)
+            )
+            .setReorderingAllowed(true)
+            .addToBackStack(null)
+            .commit()
+    }
 }

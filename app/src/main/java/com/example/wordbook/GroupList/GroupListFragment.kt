@@ -68,6 +68,8 @@ class GroupListFragment : Fragment() {
     }
 
     // 단어장 클릭 시 그룹으로 이동
+    //내 예상대로라면 이건 클릭 처리에서 group item 받아오는 거고,
+    //만약 다른 인자도 전달하고 싶으면 어답터에 전달할 필요없이 여기에서 처리해도 될 듯.
     private fun moveToGroup(group: Group){
         //main과 비교했을 때 parent프래그먼트 매니저는 메인 액티비티에서 시작할 때 쓰는 거라 상관 없을 듯.
         parentFragmentManager.beginTransaction()
