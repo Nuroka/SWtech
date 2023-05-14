@@ -41,7 +41,7 @@ class AddGroupWordAdapter(val onMoveToWordInfo:(word:Word)->Unit) : ListAdapter<
                 return AddGroupWordViewHolder(
                     DataBindingUtil.inflate(
                         LayoutInflater.from(parent.context),
-                        R.layout.viewholder_group,
+                        R.layout.viewholder_add_groupword,
                         parent,
                         false
                     )

@@ -2,8 +2,6 @@ package com.example.wordbook.addgroupword
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import androidx.room.Transaction
 import com.example.wordbook.database.GroupWord
 import com.example.wordbook.database.getDatabase
 import com.example.wordbook.database.getDatabaseGroupList

@@ -42,7 +42,7 @@ class GroupWordAdapter(val onDeleteGroupWord:(groupword: GroupWord)->Unit) : Lis
                     DataBindingUtil.inflate(
                         //viewholder_group이 아니잖냐!!!!!!
                         LayoutInflater.from(parent.context),
-                        R.layout.viewholder_group,
+                        R.layout.viewholder_groupword,
                         parent,
                         false
                     )
