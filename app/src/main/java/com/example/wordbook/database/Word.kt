@@ -9,16 +9,15 @@ data class Word(
     val id: Int,
     val english: String,
     val means: String,
-    val timestamp: String,
-    val day: Int // day 속성 추가
+    val timestamp: String
 ) {
     companion object {
-        fun make(english: String, means: String, day: Int): Word {
-            return Word(0, english, means, System.currentTimeMillis().toString(), day) //day 변수 추가
+        fun make(english: String, means: String): Word {
+            return Word(0, english, means, System.currentTimeMillis().toString())
         }
 
-        fun make(id: Int, english: String, means: String, day: Int): Word {
-            return Word(id, english, means, System.currentTimeMillis().toString(), day) //day 변수 추가
+        fun make(id: Int, english: String, means: String): Word {
+            return Word(id, english, means, System.currentTimeMillis().toString())
         }
     }
 }

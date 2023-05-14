@@ -33,11 +33,11 @@ public class FragmentStudyBindingImpl extends FragmentStudyBinding implements co
     private final android.widget.Button mboundView5;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback3;
+    private final android.view.View.OnClickListener mCallback8;
     @Nullable
-    private final android.view.View.OnClickListener mCallback4;
+    private final android.view.View.OnClickListener mCallback10;
     @Nullable
-    private final android.view.View.OnClickListener mCallback2;
+    private final android.view.View.OnClickListener mCallback9;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -65,9 +65,9 @@ public class FragmentStudyBindingImpl extends FragmentStudyBinding implements co
         this.mboundView5.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback3 = new com.example.wordbook.generated.callback.OnClickListener(this, 2);
-        mCallback4 = new com.example.wordbook.generated.callback.OnClickListener(this, 3);
-        mCallback2 = new com.example.wordbook.generated.callback.OnClickListener(this, 1);
+        mCallback8 = new com.example.wordbook.generated.callback.OnClickListener(this, 1);
+        mCallback10 = new com.example.wordbook.generated.callback.OnClickListener(this, 3);
+        mCallback9 = new com.example.wordbook.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -201,16 +201,16 @@ public class FragmentStudyBindingImpl extends FragmentStudyBinding implements co
         if ((dirtyFlags & 0x8L) != 0) {
             // api target 1
 
-            this.mboundView3.setOnClickListener(mCallback2);
-            this.mboundView4.setOnClickListener(mCallback3);
-            this.mboundView5.setOnClickListener(mCallback4);
+            this.mboundView3.setOnClickListener(mCallback8);
+            this.mboundView4.setOnClickListener(mCallback9);
+            this.mboundView5.setOnClickListener(mCallback10);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 2: {
+            case 1: {
                 // localize variables for thread safety
                 // viewModel
                 com.example.wordbook.study.StudyViewModel viewModel = mViewModel;
@@ -223,7 +223,7 @@ public class FragmentStudyBindingImpl extends FragmentStudyBinding implements co
                 if (viewModelJavaLangObjectNull) {
 
 
-                    viewModel.setNextStudyType();
+                    viewModel.loadPreviousWord();
                 }
                 break;
             }
@@ -244,7 +244,7 @@ public class FragmentStudyBindingImpl extends FragmentStudyBinding implements co
                 }
                 break;
             }
-            case 1: {
+            case 2: {
                 // localize variables for thread safety
                 // viewModel
                 com.example.wordbook.study.StudyViewModel viewModel = mViewModel;
@@ -257,7 +257,7 @@ public class FragmentStudyBindingImpl extends FragmentStudyBinding implements co
                 if (viewModelJavaLangObjectNull) {
 
 
-                    viewModel.loadPreviousWord();
+                    viewModel.setNextStudyType();
                 }
                 break;
             }

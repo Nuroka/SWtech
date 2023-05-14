@@ -39,7 +39,7 @@ public final class WordDao_Impl implements WordDao {
     this.__insertionAdapterOfWord = new EntityInsertionAdapter<Word>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR ABORT INTO `words` (`id`,`english`,`means`,`timestamp`,`day`) VALUES (nullif(?, 0),?,?,?,?)";
+        return "INSERT OR ABORT INTO `words` (`id`,`english`,`means`,`timestamp`) VALUES (nullif(?, 0),?,?,?)";
       }
 
       @Override
@@ -60,13 +60,12 @@ public final class WordDao_Impl implements WordDao {
         } else {
           stmt.bindString(4, value.getTimestamp());
         }
-        stmt.bindLong(5, value.getDay());
       }
     };
     this.__updateAdapterOfWord = new EntityDeletionOrUpdateAdapter<Word>(__db) {
       @Override
       public String createQuery() {
-        return "UPDATE OR ABORT `words` SET `id` = ?,`english` = ?,`means` = ?,`timestamp` = ?,`day` = ? WHERE `id` = ?";
+        return "UPDATE OR ABORT `words` SET `id` = ?,`english` = ?,`means` = ?,`timestamp` = ? WHERE `id` = ?";
       }
 
       @Override
@@ -87,8 +86,7 @@ public final class WordDao_Impl implements WordDao {
         } else {
           stmt.bindString(4, value.getTimestamp());
         }
-        stmt.bindLong(5, value.getDay());
-        stmt.bindLong(6, value.getId());
+        stmt.bindLong(5, value.getId());
       }
     };
   }
@@ -158,7 +156,6 @@ public final class WordDao_Impl implements WordDao {
           final int _cursorIndexOfEnglish = CursorUtil.getColumnIndexOrThrow(_cursor, "english");
           final int _cursorIndexOfMeans = CursorUtil.getColumnIndexOrThrow(_cursor, "means");
           final int _cursorIndexOfTimestamp = CursorUtil.getColumnIndexOrThrow(_cursor, "timestamp");
-          final int _cursorIndexOfDay = CursorUtil.getColumnIndexOrThrow(_cursor, "day");
           final List<Word> _result = new ArrayList<Word>(_cursor.getCount());
           while(_cursor.moveToNext()) {
             final Word _item;
@@ -182,9 +179,7 @@ public final class WordDao_Impl implements WordDao {
             } else {
               _tmpTimestamp = _cursor.getString(_cursorIndexOfTimestamp);
             }
-            final int _tmpDay;
-            _tmpDay = _cursor.getInt(_cursorIndexOfDay);
-            _item = new Word(_tmpId,_tmpEnglish,_tmpMeans,_tmpTimestamp,_tmpDay);
+            _item = new Word(_tmpId,_tmpEnglish,_tmpMeans,_tmpTimestamp);
             _result.add(_item);
           }
           return _result;
@@ -214,7 +209,6 @@ public final class WordDao_Impl implements WordDao {
           final int _cursorIndexOfEnglish = CursorUtil.getColumnIndexOrThrow(_cursor, "english");
           final int _cursorIndexOfMeans = CursorUtil.getColumnIndexOrThrow(_cursor, "means");
           final int _cursorIndexOfTimestamp = CursorUtil.getColumnIndexOrThrow(_cursor, "timestamp");
-          final int _cursorIndexOfDay = CursorUtil.getColumnIndexOrThrow(_cursor, "day");
           final List<Word> _result = new ArrayList<Word>(_cursor.getCount());
           while(_cursor.moveToNext()) {
             final Word _item;
@@ -238,9 +232,7 @@ public final class WordDao_Impl implements WordDao {
             } else {
               _tmpTimestamp = _cursor.getString(_cursorIndexOfTimestamp);
             }
-            final int _tmpDay;
-            _tmpDay = _cursor.getInt(_cursorIndexOfDay);
-            _item = new Word(_tmpId,_tmpEnglish,_tmpMeans,_tmpTimestamp,_tmpDay);
+            _item = new Word(_tmpId,_tmpEnglish,_tmpMeans,_tmpTimestamp);
             _result.add(_item);
           }
           return _result;
@@ -268,7 +260,6 @@ public final class WordDao_Impl implements WordDao {
           final int _cursorIndexOfEnglish = CursorUtil.getColumnIndexOrThrow(_cursor, "english");
           final int _cursorIndexOfMeans = CursorUtil.getColumnIndexOrThrow(_cursor, "means");
           final int _cursorIndexOfTimestamp = CursorUtil.getColumnIndexOrThrow(_cursor, "timestamp");
-          final int _cursorIndexOfDay = CursorUtil.getColumnIndexOrThrow(_cursor, "day");
           final Word _result;
           if(_cursor.moveToFirst()) {
             final int _tmpId;
@@ -291,9 +282,7 @@ public final class WordDao_Impl implements WordDao {
             } else {
               _tmpTimestamp = _cursor.getString(_cursorIndexOfTimestamp);
             }
-            final int _tmpDay;
-            _tmpDay = _cursor.getInt(_cursorIndexOfDay);
-            _result = new Word(_tmpId,_tmpEnglish,_tmpMeans,_tmpTimestamp,_tmpDay);
+            _result = new Word(_tmpId,_tmpEnglish,_tmpMeans,_tmpTimestamp);
           } else {
             _result = null;
           }
@@ -327,60 +316,6 @@ public final class WordDao_Impl implements WordDao {
             _result = _tmp;
           } else {
             _result = null;
-          }
-          return _result;
-        } finally {
-          _cursor.close();
-          _statement.release();
-        }
-      }
-    }, continuation);
-  }
-
-  @Override
-  public Object getWordsOfDay(final int day, final Continuation<? super List<Word>> continuation) {
-    final String _sql = "SELECT * FROM words WHERE day = ? ORDER BY id ASC";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
-    int _argIndex = 1;
-    _statement.bindLong(_argIndex, day);
-    final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
-    return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<List<Word>>() {
-      @Override
-      public List<Word> call() throws Exception {
-        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-        try {
-          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-          final int _cursorIndexOfEnglish = CursorUtil.getColumnIndexOrThrow(_cursor, "english");
-          final int _cursorIndexOfMeans = CursorUtil.getColumnIndexOrThrow(_cursor, "means");
-          final int _cursorIndexOfTimestamp = CursorUtil.getColumnIndexOrThrow(_cursor, "timestamp");
-          final int _cursorIndexOfDay = CursorUtil.getColumnIndexOrThrow(_cursor, "day");
-          final List<Word> _result = new ArrayList<Word>(_cursor.getCount());
-          while(_cursor.moveToNext()) {
-            final Word _item;
-            final int _tmpId;
-            _tmpId = _cursor.getInt(_cursorIndexOfId);
-            final String _tmpEnglish;
-            if (_cursor.isNull(_cursorIndexOfEnglish)) {
-              _tmpEnglish = null;
-            } else {
-              _tmpEnglish = _cursor.getString(_cursorIndexOfEnglish);
-            }
-            final String _tmpMeans;
-            if (_cursor.isNull(_cursorIndexOfMeans)) {
-              _tmpMeans = null;
-            } else {
-              _tmpMeans = _cursor.getString(_cursorIndexOfMeans);
-            }
-            final String _tmpTimestamp;
-            if (_cursor.isNull(_cursorIndexOfTimestamp)) {
-              _tmpTimestamp = null;
-            } else {
-              _tmpTimestamp = _cursor.getString(_cursorIndexOfTimestamp);
-            }
-            final int _tmpDay;
-            _tmpDay = _cursor.getInt(_cursorIndexOfDay);
-            _item = new Word(_tmpId,_tmpEnglish,_tmpMeans,_tmpTimestamp,_tmpDay);
-            _result.add(_item);
           }
           return _result;
         } finally {

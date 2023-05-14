@@ -10,11 +10,14 @@ import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
+import com.example.wordbook.BaseActivity
 import com.example.wordbook.R
 import com.example.wordbook.databinding.FragmentTestBinding
 import com.example.wordbook.databinding.FragmentVocaListBinding
 import com.example.wordbook.vocalist.VocaListFragment
 import com.example.wordbook.vocalist.VocaListViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class TestFragment : Fragment() {
 
@@ -22,10 +25,10 @@ class TestFragment : Fragment() {
         fun newInstance() = TestFragment()
     }
 
-
     private lateinit var viewModel: TestViewModel
     private lateinit var binding: FragmentTestBinding
     private lateinit var backPressCallback: OnBackPressedCallback
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -67,4 +70,15 @@ class TestFragment : Fragment() {
     private fun destroy() {
         parentFragmentManager.popBackStack()
     }
+
+
+    fun addTestResultFragment(){
+        parentFragmentManager.beginTransaction()
+            .setReorderingAllowed(true)
+            .replace(BaseActivity.FRAGMENT_CONTAINER_ID, TestResultFragment.newInstance())
+            .addToBackStack(null)
+            .commit()
+    }
+
+
 }

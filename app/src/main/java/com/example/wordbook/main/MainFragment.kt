@@ -1,14 +1,12 @@
 package com.example.wordbook.main
 
 import android.content.Context
-import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentManager
@@ -16,15 +14,19 @@ import com.example.wordbook.BaseActivity
 import com.example.wordbook.R
 import com.example.wordbook.databinding.FragmentMainBinding
 import com.example.wordbook.study.StudyFragment
-import com.example.wordbook.test.TestDateActivity
+import com.example.wordbook.test.TestDateFragment
 import com.example.wordbook.test.TestFragment
+import com.example.wordbook.test.TestResultFragment
+import com.example.wordbook.test.TestWordGoalFragment
 import com.example.wordbook.vocalist.VocaListBaseFragment
+
 
 class MainFragment : Fragment() {
 
     companion object {
         fun newInstance() = MainFragment()
     }
+
 
     private lateinit var viewModel: MainViewModel
     private lateinit var binding: FragmentMainBinding
@@ -39,6 +41,8 @@ class MainFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         binding.viewModel = viewModel
+
+
 
         viewModel.mStudyMovingState.observe(viewLifecycleOwner) {
             when (it) {
@@ -68,29 +72,28 @@ class MainFragment : Fragment() {
             }
         }
 
+
         binding.register.setOnClickListener {
             addVocaListFragment()
         }
 
-        //추가한 부분 //단어목표설정 후 다시 메인페이지로 돌아가게 만들어야 하는데 구현 방법을 모르겠습니다.
-        /*val view = inflater.inflate(R.layout.activity_test_word_goal, container, false)
-        val buttonMoveTomain = view.findViewById<Button>(R.id.button_moveTomain)
-        binding.buttonMoveTomain.setOnClickListenr {
-            val fragment = MainFragment()
-            val transaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container, fragment)
-            transaction.addToBackStack(null)
-            transaction.commit()
-        }*/
+        //추가한 부분
+        binding.test.setOnClickListener{
+            addTestDateFragment()
+        }
 
-        //return binding.root
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        binding.testwordgoal.setOnClickListener{
+            addTestWordGoalFragment()
+        }
+
+        return binding.root
     }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
         supportFragmentManager = requireActivity().supportFragmentManager
+
     }
 
     private fun addVocaListFragment() {
@@ -120,21 +123,25 @@ class MainFragment : Fragment() {
             .commit()
     }
 
-    //추가한 부분
-    fun startTestDate(view: View){
-        val intent = Intent(activity, TestDateActivity::class.java)
-        startActivity(intent)
+    //메인페이지에서 "테스트" 버튼 클릭 시 testdate(테스트 날짜 선택)페이지로 이동
+    private fun addTestDateFragment(){
+        supportFragmentManager
+            .beginTransaction()
+            .setReorderingAllowed(true)
+            .replace(BaseActivity.FRAGMENT_CONTAINER_ID, TestDateFragment.newInstance())
+            .addToBackStack(null)
+            .commit()
     }
 
-    /*override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        binding.button_moveTomain.setOnClickListener {
-            val fragment = MainFragment()
-            val transaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container, fragment)
-            transaction.addToBackStack(null)
-            transaction.commit()
-        }
-    }*/
+    //메인페이지에서 "단어목표설정" 버튼 클릭 시 testwordgoal(단어목표설정)페이지로 이동
+    private fun addTestWordGoalFragment(){
+        supportFragmentManager
+            .beginTransaction()
+            .setReorderingAllowed(true)
+            .replace(BaseActivity.FRAGMENT_CONTAINER_ID, TestWordGoalFragment.newInstance())
+            .addToBackStack(null)
+            .commit()
+    }
 }
+
+

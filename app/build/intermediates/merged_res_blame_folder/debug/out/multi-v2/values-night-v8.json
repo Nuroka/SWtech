@@ -4,7 +4,7 @@
             "outputFile": "com.example.wordbook.app-mergeDebugResources-35:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Administrator\\SWtech-dabeen\\SWtech-dabeen\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "source": "C:\\Users\\Administrator\\dabeen\\SWtech-main\\app\\src\\main\\res\\values-night\\themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -1,13 +1,9 @@
 package com.example.wordbook.main
 
 import android.app.Application
-import android.content.Intent
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.*
 import com.example.wordbook.database.getDatabase
 import com.example.wordbook.repository.WordRepository
-import com.example.wordbook.test.TestDateActivity
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
@@ -27,9 +23,18 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
     val mStudyMovingState: LiveData<MovingState>
         get() = _mStudyMovingState
 
+    //추가한 부분
     private val _mTestMovingState = MutableLiveData<MovingState>(MovingState.IDLE)
     val mTestMovingState: LiveData<MovingState>
         get() = _mTestMovingState
+
+    private val _mTestWordGoalMovingState = MutableLiveData<MovingState>(MovingState.IDLE)
+    val mTestWordGoalState: LiveData<MovingState>
+        get() = _mTestWordGoalMovingState
+
+    private val _mTestDateMovingState = MutableLiveData<MovingState>(MovingState.IDLE)
+    val mTestDateMovingState: LiveData<MovingState>
+        get() = _mTestDateMovingState
 
     fun moveToStudy() {
         viewModelScope.launch {
@@ -71,10 +76,21 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
         }.await()
     }
 
-    //추가한 부분
-    fun moveToTestDate() {
-        val intent = Intent(getApplication(), TestDateActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-        ContextCompat.startActivity(getApplication(), intent, null)
+    /*fun moveToTestWordGoal(){
+        viewModelScope.launch {
+            _mTestWordGoalMovingState.value = MovingState.MOVE
+        }
     }
+
+    fun moveToTestDate(){
+        _mTestDateMovingState.value = MovingState.MOVE
+
+        /*val fragmentManager = (getApplication() as AppCompatActivity).supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragment_container, TestDateFragment())
+        fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.commit()*/
+    }*/
+
+
 }

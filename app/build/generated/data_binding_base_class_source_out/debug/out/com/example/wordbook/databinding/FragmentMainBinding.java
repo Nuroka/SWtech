@@ -27,17 +27,21 @@ public abstract class FragmentMainBinding extends ViewDataBinding {
   public final Button test;
 
   @NonNull
+  public final Button testwordgoal;
+
+  @NonNull
   public final TextView title;
 
   @Bindable
   protected MainViewModel mViewModel;
 
   protected FragmentMainBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button register, Button study, Button test, TextView title) {
+      Button register, Button study, Button test, Button testwordgoal, TextView title) {
     super(_bindingComponent, _root, _localFieldCount);
     this.register = register;
     this.study = study;
     this.test = test;
+    this.testwordgoal = testwordgoal;
     this.title = title;
   }
 

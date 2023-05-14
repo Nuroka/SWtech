@@ -21,15 +21,6 @@
         android:testOnly="true"
         android:theme="@style/Theme.WordBook" >
         <activity
-            android:name="com.example.wordbook.test.TestResult"
-            android:exported="false" />
-        <activity
-            android:name="com.example.wordbook.test.TestWordGoal"
-            android:exported="false" />
-        <activity
-            android:name="com.example.wordbook.test.TestDateActivity"
-            android:exported="false" />
-        <activity
             android:name="com.example.wordbook.BaseActivity"
             android:exported="true" >
             <intent-filter>

@@ -14,39 +14,38 @@ public class FragmentMainBindingImpl extends FragmentMainBinding implements com.
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.title, 3);
+        sViewsWithIds.put(R.id.title, 2);
+        sViewsWithIds.put(R.id.test, 3);
         sViewsWithIds.put(R.id.register, 4);
+        sViewsWithIds.put(R.id.testwordgoal, 5);
     }
     // views
     @NonNull
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback10;
-    @Nullable
-    private final android.view.View.OnClickListener mCallback11;
+    private final android.view.View.OnClickListener mCallback7;
     // values
     // listeners
     // Inverse Binding Event Handlers
 
     public FragmentMainBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
     }
     private FragmentMainBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.Button) bindings[4]
             , (android.widget.Button) bindings[1]
-            , (android.widget.Button) bindings[2]
-            , (android.widget.TextView) bindings[3]
+            , (android.widget.Button) bindings[3]
+            , (android.widget.Button) bindings[5]
+            , (android.widget.TextView) bindings[2]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
         this.study.setTag(null);
-        this.test.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback10 = new com.example.wordbook.generated.callback.OnClickListener(this, 1);
-        mCallback11 = new com.example.wordbook.generated.callback.OnClickListener(this, 2);
+        mCallback7 = new com.example.wordbook.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -108,48 +107,25 @@ public class FragmentMainBindingImpl extends FragmentMainBinding implements com.
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.study.setOnClickListener(mCallback10);
-            this.test.setOnClickListener(mCallback11);
+            this.study.setOnClickListener(mCallback7);
         }
     }
     // Listener Stub Implementations
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
-        switch(sourceId) {
-            case 1: {
-                // localize variables for thread safety
-                // viewModel
-                com.example.wordbook.main.MainViewModel viewModel = mViewModel;
-                // viewModel != null
-                boolean viewModelJavaLangObjectNull = false;
+        // localize variables for thread safety
+        // viewModel
+        com.example.wordbook.main.MainViewModel viewModel = mViewModel;
+        // viewModel != null
+        boolean viewModelJavaLangObjectNull = false;
 
 
 
-                viewModelJavaLangObjectNull = (viewModel) != (null);
-                if (viewModelJavaLangObjectNull) {
+        viewModelJavaLangObjectNull = (viewModel) != (null);
+        if (viewModelJavaLangObjectNull) {
 
 
-                    viewModel.moveToStudy();
-                }
-                break;
-            }
-            case 2: {
-                // localize variables for thread safety
-                // viewModel
-                com.example.wordbook.main.MainViewModel viewModel = mViewModel;
-                // viewModel != null
-                boolean viewModelJavaLangObjectNull = false;
-
-
-
-                viewModelJavaLangObjectNull = (viewModel) != (null);
-                if (viewModelJavaLangObjectNull) {
-
-
-                    viewModel.moveToTestDate();
-                }
-                break;
-            }
+            viewModel.moveToStudy();
         }
     }
     // dirty flag

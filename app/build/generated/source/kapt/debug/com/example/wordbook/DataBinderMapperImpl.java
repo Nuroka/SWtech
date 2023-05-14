@@ -11,6 +11,9 @@ import com.example.wordbook.databinding.FragmentMainBindingImpl;
 import com.example.wordbook.databinding.FragmentRegisterVocaBindingImpl;
 import com.example.wordbook.databinding.FragmentStudyBindingImpl;
 import com.example.wordbook.databinding.FragmentTestBindingImpl;
+import com.example.wordbook.databinding.FragmentTestDateBindingImpl;
+import com.example.wordbook.databinding.FragmentTestResultBindingImpl;
+import com.example.wordbook.databinding.FragmentTestWordGoalBindingImpl;
 import com.example.wordbook.databinding.FragmentVocaListBindingImpl;
 import com.example.wordbook.databinding.ViewholderVocaBindingImpl;
 import java.lang.IllegalArgumentException;
@@ -34,11 +37,17 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_FRAGMENTTEST = 5;
 
-  private static final int LAYOUT_FRAGMENTVOCALIST = 6;
+  private static final int LAYOUT_FRAGMENTTESTDATE = 6;
 
-  private static final int LAYOUT_VIEWHOLDERVOCA = 7;
+  private static final int LAYOUT_FRAGMENTTESTRESULT = 7;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(7);
+  private static final int LAYOUT_FRAGMENTTESTWORDGOAL = 8;
+
+  private static final int LAYOUT_FRAGMENTVOCALIST = 9;
+
+  private static final int LAYOUT_VIEWHOLDERVOCA = 10;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(10);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.wordbook.R.layout.fragment_edit_voca, LAYOUT_FRAGMENTEDITVOCA);
@@ -46,6 +55,9 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.wordbook.R.layout.fragment_register_voca, LAYOUT_FRAGMENTREGISTERVOCA);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.wordbook.R.layout.fragment_study, LAYOUT_FRAGMENTSTUDY);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.wordbook.R.layout.fragment_test, LAYOUT_FRAGMENTTEST);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.wordbook.R.layout.fragment_test_date, LAYOUT_FRAGMENTTESTDATE);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.wordbook.R.layout.fragment_test_result, LAYOUT_FRAGMENTTESTRESULT);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.wordbook.R.layout.fragment_test_word_goal, LAYOUT_FRAGMENTTESTWORDGOAL);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.wordbook.R.layout.fragment_voca_list, LAYOUT_FRAGMENTVOCALIST);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.wordbook.R.layout.viewholder_voca, LAYOUT_VIEWHOLDERVOCA);
   }
@@ -88,6 +100,24 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             return new FragmentTestBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for fragment_test is invalid. Received: " + tag);
+        }
+        case  LAYOUT_FRAGMENTTESTDATE: {
+          if ("layout/fragment_test_date_0".equals(tag)) {
+            return new FragmentTestDateBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_test_date is invalid. Received: " + tag);
+        }
+        case  LAYOUT_FRAGMENTTESTRESULT: {
+          if ("layout/fragment_test_result_0".equals(tag)) {
+            return new FragmentTestResultBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_test_result is invalid. Received: " + tag);
+        }
+        case  LAYOUT_FRAGMENTTESTWORDGOAL: {
+          if ("layout/fragment_test_word_goal_0".equals(tag)) {
+            return new FragmentTestWordGoalBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_test_word_goal is invalid. Received: " + tag);
         }
         case  LAYOUT_FRAGMENTVOCALIST: {
           if ("layout/fragment_voca_list_0".equals(tag)) {
@@ -157,7 +187,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(7);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(10);
 
     static {
       sKeys.put("layout/fragment_edit_voca_0", com.example.wordbook.R.layout.fragment_edit_voca);
@@ -165,6 +195,9 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/fragment_register_voca_0", com.example.wordbook.R.layout.fragment_register_voca);
       sKeys.put("layout/fragment_study_0", com.example.wordbook.R.layout.fragment_study);
       sKeys.put("layout/fragment_test_0", com.example.wordbook.R.layout.fragment_test);
+      sKeys.put("layout/fragment_test_date_0", com.example.wordbook.R.layout.fragment_test_date);
+      sKeys.put("layout/fragment_test_result_0", com.example.wordbook.R.layout.fragment_test_result);
+      sKeys.put("layout/fragment_test_word_goal_0", com.example.wordbook.R.layout.fragment_test_word_goal);
       sKeys.put("layout/fragment_voca_list_0", com.example.wordbook.R.layout.fragment_voca_list);
       sKeys.put("layout/viewholder_voca_0", com.example.wordbook.R.layout.viewholder_voca);
     }

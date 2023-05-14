@@ -22,15 +22,15 @@ public class FragmentTestBindingImpl extends FragmentTestBinding implements com.
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback9;
-    @Nullable
-    private final android.view.View.OnClickListener mCallback7;
-    @Nullable
-    private final android.view.View.OnClickListener mCallback8;
-    @Nullable
     private final android.view.View.OnClickListener mCallback5;
     @Nullable
     private final android.view.View.OnClickListener mCallback6;
+    @Nullable
+    private final android.view.View.OnClickListener mCallback3;
+    @Nullable
+    private final android.view.View.OnClickListener mCallback4;
+    @Nullable
+    private final android.view.View.OnClickListener mCallback2;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -61,11 +61,11 @@ public class FragmentTestBindingImpl extends FragmentTestBinding implements com.
         this.textEnglish.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback9 = new com.example.wordbook.generated.callback.OnClickListener(this, 5);
-        mCallback7 = new com.example.wordbook.generated.callback.OnClickListener(this, 3);
-        mCallback8 = new com.example.wordbook.generated.callback.OnClickListener(this, 4);
-        mCallback5 = new com.example.wordbook.generated.callback.OnClickListener(this, 1);
-        mCallback6 = new com.example.wordbook.generated.callback.OnClickListener(this, 2);
+        mCallback5 = new com.example.wordbook.generated.callback.OnClickListener(this, 4);
+        mCallback6 = new com.example.wordbook.generated.callback.OnClickListener(this, 5);
+        mCallback3 = new com.example.wordbook.generated.callback.OnClickListener(this, 2);
+        mCallback4 = new com.example.wordbook.generated.callback.OnClickListener(this, 3);
+        mCallback2 = new com.example.wordbook.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -186,11 +186,11 @@ public class FragmentTestBindingImpl extends FragmentTestBinding implements com.
         if ((dirtyFlags & 0x8L) != 0) {
             // api target 1
 
-            this.buttonMeans1.setOnClickListener(mCallback5);
-            this.buttonMeans2.setOnClickListener(mCallback6);
-            this.buttonMeans3.setOnClickListener(mCallback7);
-            this.buttonMeans4.setOnClickListener(mCallback8);
-            this.buttonMeans5.setOnClickListener(mCallback9);
+            this.buttonMeans1.setOnClickListener(mCallback2);
+            this.buttonMeans2.setOnClickListener(mCallback3);
+            this.buttonMeans3.setOnClickListener(mCallback4);
+            this.buttonMeans4.setOnClickListener(mCallback5);
+            this.buttonMeans5.setOnClickListener(mCallback6);
         }
         if ((dirtyFlags & 0xeL) != 0) {
             // api target 1
@@ -211,6 +211,24 @@ public class FragmentTestBindingImpl extends FragmentTestBinding implements com.
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
+            case 4: {
+                // localize variables for thread safety
+                // viewModel
+                com.example.wordbook.test.TestViewModel viewModel = mViewModel;
+                // viewModel != null
+                boolean viewModelJavaLangObjectNull = false;
+
+
+
+                viewModelJavaLangObjectNull = (viewModel) != (null);
+                if (viewModelJavaLangObjectNull) {
+
+
+
+                    viewModel.onClickCandidate(3);
+                }
+                break;
+            }
             case 5: {
                 // localize variables for thread safety
                 // viewModel
@@ -226,6 +244,24 @@ public class FragmentTestBindingImpl extends FragmentTestBinding implements com.
 
 
                     viewModel.onClickCandidate(4);
+                }
+                break;
+            }
+            case 2: {
+                // localize variables for thread safety
+                // viewModel
+                com.example.wordbook.test.TestViewModel viewModel = mViewModel;
+                // viewModel != null
+                boolean viewModelJavaLangObjectNull = false;
+
+
+
+                viewModelJavaLangObjectNull = (viewModel) != (null);
+                if (viewModelJavaLangObjectNull) {
+
+
+
+                    viewModel.onClickCandidate(1);
                 }
                 break;
             }
@@ -247,24 +283,6 @@ public class FragmentTestBindingImpl extends FragmentTestBinding implements com.
                 }
                 break;
             }
-            case 4: {
-                // localize variables for thread safety
-                // viewModel
-                com.example.wordbook.test.TestViewModel viewModel = mViewModel;
-                // viewModel != null
-                boolean viewModelJavaLangObjectNull = false;
-
-
-
-                viewModelJavaLangObjectNull = (viewModel) != (null);
-                if (viewModelJavaLangObjectNull) {
-
-
-
-                    viewModel.onClickCandidate(3);
-                }
-                break;
-            }
             case 1: {
                 // localize variables for thread safety
                 // viewModel
@@ -280,24 +298,6 @@ public class FragmentTestBindingImpl extends FragmentTestBinding implements com.
 
 
                     viewModel.onClickCandidate(0);
-                }
-                break;
-            }
-            case 2: {
-                // localize variables for thread safety
-                // viewModel
-                com.example.wordbook.test.TestViewModel viewModel = mViewModel;
-                // viewModel != null
-                boolean viewModelJavaLangObjectNull = false;
-
-
-
-                viewModelJavaLangObjectNull = (viewModel) != (null);
-                if (viewModelJavaLangObjectNull) {
-
-
-
-                    viewModel.onClickCandidate(1);
                 }
                 break;
             }

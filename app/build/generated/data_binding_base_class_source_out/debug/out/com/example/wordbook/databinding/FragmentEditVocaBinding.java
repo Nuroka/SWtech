@@ -22,9 +22,6 @@ public abstract class FragmentEditVocaBinding extends ViewDataBinding {
   public final Button confirm;
 
   @NonNull
-  public final EditText dayInput;
-
-  @NonNull
   public final TextView english;
 
   @NonNull
@@ -40,11 +37,10 @@ public abstract class FragmentEditVocaBinding extends ViewDataBinding {
   protected Word mWord;
 
   protected FragmentEditVocaBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button confirm, EditText dayInput, TextView english, EditText englishInput, TextView means,
+      Button confirm, TextView english, EditText englishInput, TextView means,
       EditText meansInput) {
     super(_bindingComponent, _root, _localFieldCount);
     this.confirm = confirm;
-    this.dayInput = dayInput;
     this.english = english;
     this.englishInput = englishInput;
     this.means = means;

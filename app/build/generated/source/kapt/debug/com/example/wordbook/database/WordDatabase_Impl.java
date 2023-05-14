@@ -37,9 +37,9 @@ public final class WordDatabase_Impl extends WordDatabase {
     final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(1) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `words` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `english` TEXT NOT NULL, `means` TEXT NOT NULL, `timestamp` TEXT NOT NULL, `day` INTEGER NOT NULL)");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `words` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `english` TEXT NOT NULL, `means` TEXT NOT NULL, `timestamp` TEXT NOT NULL)");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '701b221d76811cd1f00524554c91a28a')");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'cca7ce7a9208780f3ccd1f7ccbf50f23')");
       }
 
       @Override
@@ -83,12 +83,11 @@ public final class WordDatabase_Impl extends WordDatabase {
 
       @Override
       protected RoomOpenHelper.ValidationResult onValidateSchema(SupportSQLiteDatabase _db) {
-        final HashMap<String, TableInfo.Column> _columnsWords = new HashMap<String, TableInfo.Column>(5);
+        final HashMap<String, TableInfo.Column> _columnsWords = new HashMap<String, TableInfo.Column>(4);
         _columnsWords.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsWords.put("english", new TableInfo.Column("english", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsWords.put("means", new TableInfo.Column("means", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsWords.put("timestamp", new TableInfo.Column("timestamp", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsWords.put("day", new TableInfo.Column("day", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysWords = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesWords = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoWords = new TableInfo("words", _columnsWords, _foreignKeysWords, _indicesWords);
@@ -100,7 +99,7 @@ public final class WordDatabase_Impl extends WordDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "701b221d76811cd1f00524554c91a28a", "6d73998101651746704a03d2dc71eb5f");
+    }, "cca7ce7a9208780f3ccd1f7ccbf50f23", "9b25be7744cb3f464f63169951ea60e4");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)

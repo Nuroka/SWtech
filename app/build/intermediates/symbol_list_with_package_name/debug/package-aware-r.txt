@@ -2639,7 +2639,6 @@ id button_means2
 id button_means3
 id button_means4
 id button_means5
-id button_moveTomain
 id button_word30
 id button_word50
 id button_word70
@@ -2692,7 +2691,6 @@ id customPanel
 id cut
 id dataBinding
 id date_picker_actions
-id dayInput
 id decelerate
 id decelerateAndComplete
 id decor_content_parent
@@ -2843,6 +2841,7 @@ id month_navigation_next
 id month_navigation_previous
 id month_title
 id motion_base
+id moveToMain
 id mtrl_anchor_parent
 id mtrl_calendar_day_selector_frame
 id mtrl_calendar_days_of_week
@@ -3000,10 +2999,12 @@ id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
 id test
+id testView
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
 id test_radiobutton_android_button_tint
 id test_radiobutton_app_button_tint
+id testwordgoal
 id text
 id text2
 id textEnd
@@ -3157,9 +3158,6 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout action_bar
 layout activity_base
-layout activity_test_date
-layout activity_test_result
-layout activity_test_word_goal
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3181,6 +3179,9 @@ layout fragment_main
 layout fragment_register_voca
 layout fragment_study
 layout fragment_test
+layout fragment_test_date
+layout fragment_test_result
+layout fragment_test_word_goal
 layout fragment_voca_list
 layout fragment_voca_list_base
 layout m3_alert_dialog

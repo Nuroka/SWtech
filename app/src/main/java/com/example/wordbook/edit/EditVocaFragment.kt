@@ -48,28 +48,19 @@ class EditVocaFragment : Fragment() {
         val viewModelFactory = EditVocaViewModelFactory(requireActivity().application, mWordId)
         viewModel = ViewModelProvider(this, viewModelFactory).get(EditVocaViewModel::class.java)
 
-        //수정한 부분
         viewModel.state.observe(viewLifecycleOwner) {
             when (it) {
-                is EditVocaViewModelState.Ready -> {
-                    binding.word = it.word
-                    binding.dayInput.setText(it.word.day.toString()) // day 필드 추가
-                }
-            }
-            /*when (it) {
                 is EditVocaViewModelState.Ready -> binding.word = it.word
 //                is EditVocaViewModelState.Loading -> Toast.makeText(this, "loading", Toast.LENGTH_SHORT).show()
-            }*/
+            }
         }
 
-        //수정한 부분 (word 클래스에 day가 추가되어)
         binding.confirm.setOnClickListener {
             val english = binding.englishInput.text.toString()
             val means = binding.meansInput.text.toString()
-            val day = binding.dayInput.text.toString().toInt()
 
             lifecycleScope.launch {
-                viewModel.updateWord(english, means, day) //수정한 부분 //day 추가
+                viewModel.updateWord(english, means)
                 destroy()
             }
         }
