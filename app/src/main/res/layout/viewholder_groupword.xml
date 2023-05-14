@@ -32,25 +32,26 @@
             android:id="@+id/deleteGroupWord"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:onClick="@{() -> onClickDeleteGroupWord.onDeleteGroupWordClick(groupword) }"
             android:text="삭제"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/meansgroupword"
-            app:layout_constraintTop_toTopOf="parent"
-            android:onClick="@{() -> onClickDeleteGroupWord.onDeleteGroupWordClick(groupword) }"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/meansgroupword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="100dp"
             android:text="@string/title_mean"
             android:textColor="@color/deepGray"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:meansgroupword="@{groupword}"
-            tools:layout_editor_absoluteX="324dp" />
+            app:meansgroupword="@{groupword}" />
 
         <TextView
             android:id="@+id/englishgroupword"

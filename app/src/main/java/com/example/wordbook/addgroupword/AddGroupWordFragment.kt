@@ -15,7 +15,7 @@ import com.example.wordbook.databinding.FragmentAddGroupWordBinding
 import com.example.wordbook.groupword.GroupWordBaseFragment
 
 
-private const val ARG_GROUP_ID = "group_id"
+private const val ARG_GROUP_ID = "group2_id"
 
 class AddGroupWordFragment : Fragment() {
     var sendgroupid = -1
@@ -25,7 +25,6 @@ class AddGroupWordFragment : Fragment() {
             val args = Bundle()
             args.putInt(ARG_GROUP_ID, groupId)
             fragment.arguments = args
-
             return fragment
         }
     }
@@ -41,9 +40,10 @@ class AddGroupWordFragment : Fragment() {
         val mGroupId = arguments?.let {
             it.getInt(ARG_GROUP_ID)
         } ?: -1
-        sendgroupid = mGroupId
+        //sendgroupid = mGroupId
 
         val viewModelFactory = AddGroupWordViewModelFactory(requireActivity().application, mGroupId)
+
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_add_group_word, container, false)
         viewModel = ViewModelProvider(this, viewModelFactory).get(AddGroupWordViewModel::class.java)
@@ -61,6 +61,7 @@ class AddGroupWordFragment : Fragment() {
         return binding.root
     }
 
+    //여기 수정해야함 복붙하느라 이상한 값 컨테이너가 들어갔네
     private fun MoveToWordInfo(word: Word){
         parentFragmentManager.beginTransaction()
             .replace(
