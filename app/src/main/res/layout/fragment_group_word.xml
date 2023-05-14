@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <SearchView
+        <androidx.appcompat.widget.SearchView
             android:id="@+id/searchGroupWord"
             android:layout_width="0dp"
             android:layout_height="?attr/actionBarSize"
@@ -24,7 +24,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:queryHint="검색">
 
-        </SearchView>
+        </androidx.appcompat.widget.SearchView>
 
         <ScrollView
             android:id="@+id/wordScroll_view"
