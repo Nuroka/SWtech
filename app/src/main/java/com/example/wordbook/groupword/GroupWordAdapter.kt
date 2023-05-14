@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.wordbook.R
 import com.example.wordbook.database.Group
 import com.example.wordbook.database.GroupWord
-import com.example.wordbook.databinding.ViewholderGroupBinding
 import com.example.wordbook.databinding.ViewholderGroupwordBinding
 
 //삭제 기능 구현. 어답터에서 할일은 그것 밖에 없음.
@@ -41,6 +40,7 @@ class GroupWordAdapter(val onDeleteGroupWord:(groupword: GroupWord)->Unit) : Lis
             fun from(parent: ViewGroup): GroupWordViewHolder {
                 return GroupWordViewHolder(
                     DataBindingUtil.inflate(
+                        //viewholder_group이 아니잖냐!!!!!!
                         LayoutInflater.from(parent.context),
                         R.layout.viewholder_group,
                         parent,
