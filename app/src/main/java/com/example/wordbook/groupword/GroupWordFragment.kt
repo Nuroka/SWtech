@@ -60,7 +60,7 @@ class GroupWordFragment : Fragment() {
 
         //어답터에 상세 페이지 이동이 아닌  삭제 기능 추가하기.
         binding.groupwordlist.layoutManager = LinearLayoutManager(requireContext())
-        adapter = GroupWordAdapter(::moveToGroupWordInfo)
+        adapter = GroupWordAdapter(::DeleteToGroupWord)
         binding.groupwordlist.adapter = adapter
 
         //클릭 감지 -> button
@@ -76,8 +76,6 @@ class GroupWordFragment : Fragment() {
         return binding.root
     }
 
-    //프래그먼트 이동 정의
-
     //추가 버튼 누를 시 단어장에 단어 추가 프래그먼트로 이동
     private fun moveToAddGroupWord(groupId: Int){
         parentFragmentManager.beginTransaction()
@@ -90,19 +88,10 @@ class GroupWordFragment : Fragment() {
             .commit()
     }
 
-    // 단어장 클릭 시 그룹으로 이동
-    private fun moveToGroupWordInfo(groupword: GroupWord){
-        //main과 비교했을 때 parent프래그먼트 매니저는 메인 액티비티에서 시작할 때 쓰는 거라 상관 없을 듯.
-        parentFragmentManager.beginTransaction()
-            .replace(
-                GroupWordBaseFragment.GROUP_WORD_FRAGMENT_CONTAINER_ID,
-                //이건 좀 고려를 해봐야할 듯, 어떻게 넘어가야할지.
-                GroupWordInfoFragment.newInstance(groupword.word_id)
-            )
-            .setReorderingAllowed(true)
-            .addToBackStack(null)
-            .commit()
-        parentFragmentManager.popBackStack()
+    // 단어 삭제 누를 시 삭제
+    private fun DeleteToGroupWord(groupword: GroupWord) {
+        lifecycleScope.launch {
+            viewModel.deleteGroupWord(groupword)
+        }
     }
-
 }

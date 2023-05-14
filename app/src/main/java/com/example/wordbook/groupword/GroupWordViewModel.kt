@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.wordbook.database.Group
+import com.example.wordbook.database.GroupWord
 import com.example.wordbook.database.Word
 import com.example.wordbook.database.getDatabaseGroupList
 import com.example.wordbook.repository.GroupListRepository
@@ -17,4 +18,7 @@ class GroupWordViewModel(application: Application, val mGroupId: Int):ViewModel(
 
     val groupWordList = repository.getAllGroupWordList(mGroupId)
 
+    suspend fun deleteGroupWord(groupword: GroupWord) {
+        return repository.deleteGroupWord(groupword)
+    }
 }

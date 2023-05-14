@@ -12,7 +12,8 @@ import com.example.wordbook.database.GroupWord
 import com.example.wordbook.databinding.ViewholderGroupBinding
 import com.example.wordbook.databinding.ViewholderGroupwordBinding
 
-class GroupWordAdapter(val onMoveToGroupInfo:(groupword: GroupWord)->Unit) : ListAdapter<GroupWord, GroupWordAdapter.GroupWordViewHolder>(GroupWordDiffCallback()){
+//삭제 기능 구현. 어답터에서 할일은 그것 밖에 없음.
+class GroupWordAdapter(val onDeleteGroupWord:(groupword: GroupWord)->Unit) : ListAdapter<GroupWord, GroupWordAdapter.GroupWordViewHolder>(GroupWordDiffCallback()){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GroupWordViewHolder {
         return GroupWordViewHolder.from(parent)
@@ -20,7 +21,7 @@ class GroupWordAdapter(val onMoveToGroupInfo:(groupword: GroupWord)->Unit) : Lis
 
     override fun onBindViewHolder(holder: GroupWordViewHolder, position: Int) {
         holder.binding.groupword = getItem(position)
-        holder.binding.onClickGroupWord = GroupWordClickListener(onMoveToGroupInfo)
+        holder.binding.onClickDeleteGroupWord = DeleteWordClickListener(onDeleteGroupWord)
     }
 
 
@@ -50,7 +51,7 @@ class GroupWordAdapter(val onMoveToGroupInfo:(groupword: GroupWord)->Unit) : Lis
         }
 
     }
-    class GroupWordClickListener(val onMoveToGroupInfo: (groupword: GroupWord) -> Unit){
-        fun onGroupWordClick(groupword: GroupWord) = onMoveToGroupInfo(groupword)
+    class DeleteWordClickListener(val onDeleteGroupWord: (groupword: GroupWord) -> Unit){
+        fun onDeleteGroupWordClick(groupword: GroupWord) = onDeleteGroupWord(groupword)
     }
 }
