@@ -22,6 +22,12 @@ public class LoginRequest extends StringRequest {
         map.put("userPassword", userPassword);
 
     }
+    public LoginRequest(String userID,  Response.Listener<String> listener) {
+        super(Method.POST, URL, listener, null);
+
+        map = new HashMap<>();
+        map.put("userID",userID);
+    }
 
     @Override
     protected Map<String, String> getParams() throws AuthFailureError {
