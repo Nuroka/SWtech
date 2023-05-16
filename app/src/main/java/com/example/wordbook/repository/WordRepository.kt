@@ -8,6 +8,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class WordRepository(private val database: WordDatabase) {
+    fun getWordListByLiveData(): LiveData<List<Word>> {
+        return database.wordDao.selectAllWithLiveData()
+    }
+
     suspend fun getWordList(): List<Word> {
         return withContext(Dispatchers.IO) {
             database.wordDao.selectAll()
