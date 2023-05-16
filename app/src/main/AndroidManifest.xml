@@ -27,7 +27,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".main.RegisterActivity" />
-        <activity android:name=".BaseActivity">
+        <activity android:name=".main.PwCheckActivity" />
+        <activity android:name=".BaseActivity"/>
+        <activity android:name=".main.PwanswerActivity"/>
+        <activity android:name=".main.FindPwActivity">
         </activity>
     </application>
 
