@@ -1,4 +1,4 @@
-package com.example.wordbook.vocalist
+package com.example.wordbook.grouplist
 
 import android.content.Context
 import android.os.Bundle
@@ -9,10 +9,12 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import com.example.wordbook.R
 
-class VocaListBaseFragment : Fragment() {
-    companion object {
-        const val VOCA_LIST_FRAGMENT_CONTAINER_ID = R.id.voca_list_container_view
-        fun newInstance() = VocaListBaseFragment()
+class GroupListBaseFragment : Fragment() {
+
+    //일단 베이스 프래그먼트에서 베이스 프래그먼트 생성
+    companion object{
+        const val GROUP_LIST_FRAGMENT_CONTAINER_ID = R.id.group_list_container_view
+        fun newInstance() = GroupListBaseFragment()
     }
 
     private lateinit var backPressCallback: OnBackPressedCallback
@@ -21,14 +23,16 @@ class VocaListBaseFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_voca_list_base, container, false)
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_group_list_base, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        if (savedInstanceState == null) {
-            openVocaListFragment()
+        //view 생성함. 만약 인스턴스가 안전하게 생성되었으면
+        //GroupListFragment 생성함.
+        if(savedInstanceState==null){
+            openGroupListFragment()
         }
     }
 
@@ -44,20 +48,22 @@ class VocaListBaseFragment : Fragment() {
         getBackPressCallback().remove()
     }
 
-    private fun openVocaListFragment() {
+    //여기서 그룹 프래먼트 생성하는 것 같음.
+    private fun openGroupListFragment(){
         childFragmentManager.beginTransaction()
-            .replace(VOCA_LIST_FRAGMENT_CONTAINER_ID, VocaListFragment.newInstance())
+            .replace(GROUP_LIST_FRAGMENT_CONTAINER_ID, GroupListFragment.newInstance())
             .setReorderingAllowed(true)
             .commit()
     }
 
-    private fun getBackPressCallback(): OnBackPressedCallback {
-        if (!::backPressCallback.isInitialized) {
+    private fun getBackPressCallback(): OnBackPressedCallback{
+        if(!::backPressCallback.isInitialized) {
             backPressCallback = object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
-                    val currentFragment = childFragmentManager.findFragmentById(VOCA_LIST_FRAGMENT_CONTAINER_ID)
-
-                    if (currentFragment is VocaListFragment) {
+                    val currentFragment = childFragmentManager.findFragmentById(
+                        GROUP_LIST_FRAGMENT_CONTAINER_ID
+                    )
+                    if (currentFragment is GroupListFragment) {
                         destroy()
                     }
                 }
@@ -66,7 +72,7 @@ class VocaListBaseFragment : Fragment() {
         return backPressCallback
     }
 
-    private fun destroy() {
+    private fun destroy(){
         parentFragmentManager.popBackStack()
     }
 }

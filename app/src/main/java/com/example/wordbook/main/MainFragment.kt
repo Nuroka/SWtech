@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentManager
 import com.example.wordbook.BaseActivity
 import com.example.wordbook.R
 import com.example.wordbook.databinding.FragmentMainBinding
+import com.example.wordbook.grouplist.GroupListBaseFragment
 import com.example.wordbook.study.StudyFragment
 import com.example.wordbook.test.TestFragment
 import com.example.wordbook.vocalist.VocaListBaseFragment
@@ -69,6 +70,10 @@ class MainFragment : Fragment() {
             addVocaListFragment()
         }
 
+        binding.mainTogroupBtn.setOnClickListener {
+            addGroupFragment()
+        }
+
         return binding.root
     }
 
@@ -101,6 +106,15 @@ class MainFragment : Fragment() {
             .beginTransaction()
             .setReorderingAllowed(true)
             .replace(BaseActivity.FRAGMENT_CONTAINER_ID, StudyFragment.newInstance())
+            .addToBackStack(null)
+            .commit()
+    }
+
+    private fun addGroupFragment(){
+        supportFragmentManager
+            .beginTransaction()
+            .setReorderingAllowed(true)
+            .replace(BaseActivity.FRAGMENT_CONTAINER_ID, GroupListBaseFragment.newInstance())
             .addToBackStack(null)
             .commit()
     }

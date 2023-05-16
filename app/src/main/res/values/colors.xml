@@ -11,4 +11,7 @@
 
     <color name="lightGreen">#C8F0C2</color>
 
+    <color name="green_100">#48CE33</color>
+    <color name="green_200">#F0FFE4</color>
+    <color name="gray_input">#EEEEEE</color>
 </resources>

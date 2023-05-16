@@ -28,7 +28,8 @@ class VocaListFragment : Fragment() {
     private lateinit var adapter: VocaListAdapter
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_voca_list, container, false)
@@ -82,7 +83,6 @@ class VocaListFragment : Fragment() {
             .commit()
     }
 
-
     private fun moveToRegisterVoca() {
         parentFragmentManager.beginTransaction()
             .replace(
@@ -93,5 +93,4 @@ class VocaListFragment : Fragment() {
             .addToBackStack(null)
             .commit()
     }
-
 }
