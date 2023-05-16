@@ -6,6 +6,7 @@
     <string name="action_study">공부하기</string>
     <string name="action_test">테스트</string>
     <string name="action_register">등록하기</string>
+    <string name="word_list">단어장 목록</string>
     <string name="error_limit_4_word">최소 4개의 단어를 등록해주세요.</string>
     <string name="error_limit_1_word">최소 1개의 단어를 등록해주세요.</string>
 

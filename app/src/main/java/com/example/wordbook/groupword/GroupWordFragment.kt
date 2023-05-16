@@ -19,8 +19,6 @@ import kotlinx.coroutines.launch
 
 private const val ARG_GROUP_ID = "group_id"
 
-//일단 검색 기능 구현 안함... 나중에 코드 참고해서 추가할 것.
-
 class GroupWordFragment : Fragment() {
     companion object{
         fun newInstance(groupId: Int): GroupWordFragment{
