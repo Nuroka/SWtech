@@ -14,13 +14,24 @@ class BaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base)
 
-        if (savedInstanceState == null) {
-            supportFragmentManager
-                .beginTransaction()
-                .setReorderingAllowed(true)
-                .replace(FRAGMENT_CONTAINER_ID, MainFragment.newInstance())
-                .commit()
-        }
+        // 로그인 액티비티에서 전달된 사용자 아이디 가져오기
+        val userID = intent.getStringExtra("userID")
+
+        // MainFragment로 아이디 전달
+        val mainFragment = MainFragment.newInstance(userID)
+        supportFragmentManager
+            .beginTransaction()
+            .setReorderingAllowed(true)
+            .replace(FRAGMENT_CONTAINER_ID, mainFragment)
+            .commit()
+
+//        if (savedInstanceState == null) {
+//            supportFragmentManager
+//                .beginTransaction()
+//                .setReorderingAllowed(true)
+//                .replace(FRAGMENT_CONTAINER_ID, MainFragment.newInstance())
+//                .commit()
+//        }
     }
 
     override fun onBackPressed() {

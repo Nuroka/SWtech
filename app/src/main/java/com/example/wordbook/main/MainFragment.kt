@@ -16,17 +16,27 @@ import com.example.wordbook.databinding.FragmentMainBinding
 import com.example.wordbook.grouplist.GroupListBaseFragment
 import com.example.wordbook.study.StudyFragment
 import com.example.wordbook.test.TestFragment
+import com.example.wordbook.vocalist.UserVocaListBaseFragment
 import com.example.wordbook.vocalist.VocaListBaseFragment
 
 class MainFragment : Fragment() {
 
+//    companion object {
+//        fun newInstance() = MainFragment()
+//    }
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance(userID: String?) = MainFragment().apply {
+            arguments = Bundle().apply {
+                putString("userID", userID)
+            }
+        }
     }
 
     private lateinit var viewModel: MainViewModel
     private lateinit var binding: FragmentMainBinding
     private lateinit var supportFragmentManager: FragmentManager
+
+    private var userID: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -74,6 +84,8 @@ class MainFragment : Fragment() {
             addGroupFragment()
         }
 
+        userID = arguments?.getString("userID")
+
         return binding.root
     }
 
@@ -84,12 +96,32 @@ class MainFragment : Fragment() {
     }
 
     private fun addVocaListFragment() {
-        supportFragmentManager
-            .beginTransaction()
-            .setReorderingAllowed(true)
-            .replace(BaseActivity.FRAGMENT_CONTAINER_ID, VocaListBaseFragment.newInstance())
-            .addToBackStack(null)
-            .commit()
+        if (userID == "admin") {
+            // admin 아이디인 경우 다른 화면으로 이동
+            // 예시: AdminVocaListFragment로 이동
+            supportFragmentManager
+                .beginTransaction()
+                .setReorderingAllowed(true)
+                .replace(BaseActivity.FRAGMENT_CONTAINER_ID, VocaListBaseFragment.newInstance())
+                .addToBackStack(null)
+                .commit()
+        } else {
+            // 일반 사용자인 경우 다른 화면으로 이동
+            // 예시: UserVocaListFragment로 이동
+            supportFragmentManager
+                .beginTransaction()
+                .setReorderingAllowed(true)
+                .replace(BaseActivity.FRAGMENT_CONTAINER_ID, UserVocaListBaseFragment.newInstance())
+                .addToBackStack(null)
+                .commit()
+        }
+
+//        supportFragmentManager
+//            .beginTransaction()
+//            .setReorderingAllowed(true)
+//            .replace(BaseActivity.FRAGMENT_CONTAINER_ID, VocaListBaseFragment.newInstance())
+//            .addToBackStack(null)
+//            .commit()
     }
 
     private fun addTestFragment() {
