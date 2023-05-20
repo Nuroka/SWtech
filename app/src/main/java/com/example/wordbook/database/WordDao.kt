@@ -30,6 +30,9 @@ interface WordDao {
     @Query("SELECT * FROM words WHERE english LIKE '%' || :searchKeyword || '%' OR means LIKE '%' || :searchKeyword || '%'")
     suspend fun searchWords(searchKeyword: String): List<Word>
 
+    @Query("SELECT * FROM words WHERE english = :english")
+    suspend fun getWordByEnglish(english: String): Word?
+
     @Query("select count(*) from words")
     suspend fun getCount(): Int
 

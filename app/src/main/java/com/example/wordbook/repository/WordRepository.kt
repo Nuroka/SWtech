@@ -42,6 +42,12 @@ class WordRepository(private val database: WordDatabase) {
         }
     }
 
+    suspend fun getWordByEnglish(english: String): Word? {
+        return withContext(Dispatchers.IO) {
+            database.wordDao.getWordByEnglish(english)
+        }
+    }
+
     suspend fun getCounts(): Int {
         return withContext(Dispatchers.IO) {
             database.wordDao.getCount()

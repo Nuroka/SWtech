@@ -27,6 +27,10 @@ class EditVocaViewModel(application: Application, val mWordId: Int): ViewModel()
         load(mWordId)
     }
 
+    suspend fun getWordByEnglish(english: String): Word? {
+        return repository.getWordByEnglish(english)
+    }
+
     suspend fun updateWord(english: String, means: String): Int {
         if (mWordId == -1) {
             return -1

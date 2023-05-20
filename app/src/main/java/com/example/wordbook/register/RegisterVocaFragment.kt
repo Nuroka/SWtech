@@ -10,11 +10,13 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.example.wordbook.BaseActivity
 import com.example.wordbook.R
 import com.example.wordbook.database.Word
 import com.example.wordbook.databinding.FragmentRegisterVocaBinding
 import com.example.wordbook.vocalist.VocaListBaseFragment
+import kotlinx.coroutines.launch
 
 class RegisterVocaFragment : Fragment() {
 
@@ -38,19 +40,24 @@ class RegisterVocaFragment : Fragment() {
             val english = binding.englishInput.text.toString()
             val means = binding.meansInput.text.toString()
             // 영어 단어와 뜻이 모두 입력되었는지 확인.
-            if (english.isNotEmpty() && means.isNotEmpty()) {
-                viewModel.registerWord(Word.make(english, means))
-                destroy()
-            } else if (english.isEmpty()) {
-                // 영어 단어가 입력되지 않은 경우, 즉시 알림을 띄웁니다.
-                Toast.makeText(context, "영어에 글자를 입력해 주세요", Toast.LENGTH_SHORT).show()
-            } else {
-                // 뜻에 글자가 입력되지 않은 경우, 즉시 알림을 띄웁니다.
-                Toast.makeText(context, "뜻에 글자를 입력해 주세요", Toast.LENGTH_SHORT).show()
+            lifecycleScope.launch {
+                if (english.isNotEmpty() && means.isNotEmpty()) {
+                    val existingWord = viewModel.getWordByEnglish(english)
+                    if (existingWord == null) {
+                        viewModel.registerWord(Word.make(english, means))
+                        destroy()
+                        Toast.makeText(context, "단어가 추가되었습니다.", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(context, "이미 존재하는 단어입니다.", Toast.LENGTH_SHORT).show()
+                    }
+                } else if (english.isEmpty()) {
+                    // 영어 단어가 입력되지 않은 경우, 즉시 알림을 띄웁니다.
+                    Toast.makeText(context, "영어에 글자를 입력해 주세요", Toast.LENGTH_SHORT).show()
+                } else {
+                    // 뜻에 글자가 입력되지 않은 경우, 즉시 알림을 띄웁니다.
+                    Toast.makeText(context, "뜻에 글자를 입력해 주세요", Toast.LENGTH_SHORT).show()
+                }
             }
-
-//            viewModel.registerWord(Word.make(english, means))
-//            destroy()
         }
         binding.addCancel.setOnClickListener {
             destroy()

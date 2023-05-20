@@ -11,6 +11,9 @@ import kotlinx.coroutines.launch
 class RegisterVocaViewModel(application: Application): AndroidViewModel(application) {
     private val repository = WordRepository(getDatabase(application))
 
+    suspend fun getWordByEnglish(english: String): Word? {
+        return repository.getWordByEnglish(english)
+    }
     fun registerWord(word: Word) {
         viewModelScope.launch {
             repository.save(word)
