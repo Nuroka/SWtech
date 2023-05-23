@@ -59,7 +59,7 @@ fun TextView.setQuestionEnglish(item: TestViewModel.TestUnit?) {
     } ?: ""
 }
 
-@BindingAdapter("resultState")
+/*@BindingAdapter("resultState")
 fun TextView.setResultState(resultState: TestViewModel.ResultState?) {
     text = if (resultState != null) {
         context.getString(
@@ -72,7 +72,7 @@ fun TextView.setResultState(resultState: TestViewModel.ResultState?) {
     } else {
         context.getString(R.string.msg_none)
     }
-}
+}*/
 
 @BindingAdapter("firstCandidate")
 fun TextView.setFirstCandidate(item: TestViewModel.TestUnit?) {

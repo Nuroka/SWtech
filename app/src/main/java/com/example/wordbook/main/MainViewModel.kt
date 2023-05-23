@@ -23,9 +23,19 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
     val mStudyMovingState: LiveData<MovingState>
         get() = _mStudyMovingState
 
+
     private val _mTestMovingState = MutableLiveData<MovingState>(MovingState.IDLE)
     val mTestMovingState: LiveData<MovingState>
         get() = _mTestMovingState
+
+    //추가한 부분
+    private val _mTestWordGoalMovingState = MutableLiveData<MovingState>(MovingState.IDLE)
+    val mTestWordGoalState: LiveData<MovingState>
+        get() = _mTestWordGoalMovingState
+
+    private val _mTestDateMovingState = MutableLiveData<MovingState>(MovingState.IDLE)
+    val mTestDateMovingState: LiveData<MovingState>
+        get() = _mTestDateMovingState
 
     fun moveToStudy() {
         viewModelScope.launch {

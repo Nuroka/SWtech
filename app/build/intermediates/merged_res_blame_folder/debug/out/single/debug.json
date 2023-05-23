@@ -1,0 +1,138 @@
+[
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\layout_fragment_test_two.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\layout\\fragment_test_two.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\layout_activity_base.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\layout\\activity_base.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\layout_fragment_main.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\layout\\fragment_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\layout_viewholder_voca.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\layout\\viewholder_voca.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\layout_fragment_study.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\layout\\fragment_study.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\layout_fragment_test.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\layout\\fragment_test.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\drawable_testdateselect.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\drawable\\testdateselect.png"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_fragment_test_result.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_test_result.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\layout_fragment_test_word_goal.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\layout\\fragment_test_word_goal.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\layout_fragment_voca_list.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\layout\\fragment_voca_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\layout_fragment_voca_list_base.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\layout\\fragment_voca_list_base.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-pngs-32:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\drawable_ic_left.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\drawable\\ic_left.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\layout_fragment_register_voca.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\layout\\fragment_register_voca.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\layout_fragment_test_date.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\layout\\fragment_test_date.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\layout_fragment_edit_voca.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\layout\\fragment_edit_voca.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\layout_fragment_test_result.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\layout\\fragment_test_result.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\layout_action_bar.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\layout\\action_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-merged_res-37:\\drawable_ic_right.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.3.3\\com.example.wordbook.app-main-39:\\drawable\\ic_right.png"
+    }
+]

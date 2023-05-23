@@ -14,14 +14,29 @@ import com.example.wordbook.BaseActivity
 import com.example.wordbook.R
 import com.example.wordbook.databinding.FragmentMainBinding
 import com.example.wordbook.study.StudyFragment
+import com.example.wordbook.test.TestDateFragment
 import com.example.wordbook.test.TestFragment
+import com.example.wordbook.test.TestResultFragment
+import com.example.wordbook.test.TestWordGoalFragment
 import com.example.wordbook.vocalist.VocaListBaseFragment
+
 
 class MainFragment : Fragment() {
 
     companion object {
         fun newInstance() = MainFragment()
     }
+
+    /*private var testCount = 0 //TestWordGoalFragment로부터 전달받은 testCount 값을 저장할 변수
+
+    fun setTestCount(count: Int){
+        testCount = count //testCount 값을 설정
+    }
+
+    fun getTestCount(): Int{
+        return testCount // testCount 값을 반환
+    }*/
+
 
     private lateinit var viewModel: MainViewModel
     private lateinit var binding: FragmentMainBinding
@@ -36,6 +51,8 @@ class MainFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         binding.viewModel = viewModel
+
+
 
         viewModel.mStudyMovingState.observe(viewLifecycleOwner) {
             when (it) {
@@ -65,8 +82,21 @@ class MainFragment : Fragment() {
             }
         }
 
+
         binding.register.setOnClickListener {
             addVocaListFragment()
+        }
+
+
+        //추가한 부분
+        //매일학습테스트 버튼 클릭
+        binding.test.setOnClickListener{
+            addTestDateFragment()
+        }
+
+        //단어목표설정 버튼 클릭
+        binding.testwordgoal.setOnClickListener{
+            addTestWordGoalFragment()
         }
 
         return binding.root
@@ -76,6 +106,7 @@ class MainFragment : Fragment() {
         super.onAttach(context)
 
         supportFragmentManager = requireActivity().supportFragmentManager
+
     }
 
     private fun addVocaListFragment() {
@@ -94,6 +125,7 @@ class MainFragment : Fragment() {
             .replace(BaseActivity.FRAGMENT_CONTAINER_ID, TestFragment.newInstance())
             .addToBackStack(null)
             .commit()
+
     }
 
     private fun addStudyFragment() {
@@ -104,4 +136,31 @@ class MainFragment : Fragment() {
             .addToBackStack(null)
             .commit()
     }
+
+
+    //추가한 부분
+    //메인페이지에서 "테스트" 버튼 클릭 시 testdate(테스트 날짜 선택)페이지로 이동
+    private fun addTestDateFragment(){
+        supportFragmentManager
+            .beginTransaction()
+            .setReorderingAllowed(true)
+            .replace(BaseActivity.FRAGMENT_CONTAINER_ID, TestDateFragment.newInstance())
+            .addToBackStack("MainFragment") //TestResultFragment에서 바로 여기로 돌아오게 name 설정함
+            .commit()
+    }
+
+
+    //메인페이지에서 "단어목표설정" 버튼 클릭 시 testwordgoal(단어목표설정)페이지로 이동
+    private fun addTestWordGoalFragment(){
+        supportFragmentManager
+            .beginTransaction()
+            .setReorderingAllowed(true)
+            .replace(BaseActivity.FRAGMENT_CONTAINER_ID, TestWordGoalFragment.newInstance())
+            .addToBackStack(null)
+            .commit()
+    }
+
+
 }
+
+
