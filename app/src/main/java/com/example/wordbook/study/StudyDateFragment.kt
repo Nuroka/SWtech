@@ -16,8 +16,6 @@ import com.example.wordbook.R
 import com.example.wordbook.databinding.FragmentStudyDateBinding
 import com.example.wordbook.main.MainFragment
 import com.example.wordbook.main.MainViewModel
-import com.example.wordbook.study.StudyDateViewModel
-import com.example.wordbook.study.StudyFragment
 
 
 class StudyDateFragment : Fragment() {
@@ -27,7 +25,6 @@ class StudyDateFragment : Fragment() {
     }
 
     private lateinit var viewModel: StudyDateViewModel
-    private lateinit var view2Model: MainViewModel
     private lateinit var binding: FragmentStudyDateBinding
     private lateinit var backPressCallback: OnBackPressedCallback
 
@@ -40,7 +37,7 @@ class StudyDateFragment : Fragment() {
             inflater, R.layout.fragment_study_date, container, false)
         viewModel = ViewModelProvider(this).get(StudyDateViewModel::class.java)
 
-        binding.viewModel = view2Model
+        binding.viewModel = viewModel
 
         //return inflater.inflate(R.layout.fragment_test_date, container, false)
 
