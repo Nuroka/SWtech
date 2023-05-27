@@ -49,7 +49,6 @@ fun TextView.setEnglishgroupword(groupword: GroupWord?) {
 @BindingAdapter("studyEnglishVisibility")
 fun TextView.setStudyEnglishVisibility(studyType: StudyViewModel.StudyType) {
     visibility = when (studyType) {
-        StudyViewModel.StudyType.BOTH -> View.VISIBLE
         StudyViewModel.StudyType.ONLY_ENGLISH -> View.VISIBLE
         StudyViewModel.StudyType.ONLY_KOREAN -> View.GONE
     }
@@ -58,7 +57,6 @@ fun TextView.setStudyEnglishVisibility(studyType: StudyViewModel.StudyType) {
 @BindingAdapter("studyMeansVisibility")
 fun TextView.setStudyMeansVisibility(studyType: StudyViewModel.StudyType) {
     visibility = when (studyType) {
-        StudyViewModel.StudyType.BOTH -> View.VISIBLE
         StudyViewModel.StudyType.ONLY_ENGLISH -> View.GONE
         StudyViewModel.StudyType.ONLY_KOREAN -> View.VISIBLE
     }
@@ -68,7 +66,6 @@ fun TextView.setStudyMeansVisibility(studyType: StudyViewModel.StudyType) {
 fun Button.setStudyTypeButtonText(studyType: StudyViewModel.StudyType) {
     text = context.getString(
         when (studyType) {
-            StudyViewModel.StudyType.BOTH -> R.string.title_both
             StudyViewModel.StudyType.ONLY_ENGLISH -> R.string.title_only_english
             StudyViewModel.StudyType.ONLY_KOREAN -> R.string.title_only_korean
         }

@@ -14,6 +14,7 @@ import com.example.wordbook.BaseActivity
 import com.example.wordbook.R
 import com.example.wordbook.databinding.FragmentMainBinding
 import com.example.wordbook.grouplist.GroupListBaseFragment
+import com.example.wordbook.study.StudyDateFragment
 import com.example.wordbook.study.StudyFragment
 import com.example.wordbook.test.TestDateFragment
 import com.example.wordbook.test.TestFragment
@@ -96,6 +97,10 @@ class MainFragment : Fragment() {
         //단어목표설정 버튼 클릭
         binding.testwordgoal.setOnClickListener{
             addTestWordGoalFragment()
+        }
+
+        binding.study.setOnClickListener{
+            addStudyDateFragment()
         }
 
         return binding.root
@@ -189,4 +194,16 @@ class MainFragment : Fragment() {
 
 
 
+    private fun addStudyDateFragment(){
+        supportFragmentManager
+            .beginTransaction()
+            .setReorderingAllowed(true)
+            .replace(BaseActivity.FRAGMENT_CONTAINER_ID, StudyDateFragment.newInstance())
+            .addToBackStack("MainFragment")
+            .commit()
+    }
+
+
 }
+
+

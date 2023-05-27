@@ -37,6 +37,11 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
     val mTestDateMovingState: LiveData<MovingState>
         get() = _mTestDateMovingState
 
+    //study 추가
+    private val _mStudyDateMovingState = MutableLiveData<MovingState>(MovingState.IDLE)
+    val mStudyDateMovingState: LiveData<MovingState>
+        get() = _mStudyDateMovingState
+
     fun moveToStudy() {
         viewModelScope.launch {
             if (moveToStudyEnabled()) {
@@ -76,4 +81,24 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
             repository.getCounts() >= LIMIT_TO_MOVE_TEST
         }.await()
     }
+
+    //학습 날짜
+
+    private suspend fun moveToStudyDateEnabled(): Boolean {
+        return viewModelScope.async {
+            repository.getCounts() >= MainViewModel.LIMIT_TO_MOVE_STUDY
+        }.await()
+    }
+
+
+    fun moveToStudyDate() {
+        viewModelScope.launch {
+            if (moveToStudyDateEnabled()) {
+                _mStudyMovingState.value = MovingState.MOVE
+            } else {
+                _mStudyMovingState.value = MovingState.FAIL
+            }
+        }
+    }
+
 }

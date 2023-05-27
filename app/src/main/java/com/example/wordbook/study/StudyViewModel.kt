@@ -9,7 +9,6 @@ import kotlinx.coroutines.*
 
 class StudyViewModel(application: Application): AndroidViewModel(application) {
     enum class StudyType {
-        BOTH,
         ONLY_ENGLISH,
         ONLY_KOREAN
     }
@@ -19,7 +18,7 @@ class StudyViewModel(application: Application): AndroidViewModel(application) {
     private lateinit var words: List<Word>
     private var idx = 0
 
-    private val _studyType = MutableLiveData(StudyType.BOTH)
+    private val _studyType = MutableLiveData(StudyType.ONLY_ENGLISH)
     val studyType: LiveData<StudyType>
         get() = _studyType
 
@@ -61,10 +60,9 @@ class StudyViewModel(application: Application): AndroidViewModel(application) {
 
     fun setNextStudyType() {
         _studyType.value = when (_studyType.value) {
-            StudyType.BOTH -> StudyType.ONLY_ENGLISH
             StudyType.ONLY_ENGLISH -> StudyType.ONLY_KOREAN
-            StudyType.ONLY_KOREAN -> StudyType.BOTH
-            else -> StudyType.BOTH
+            StudyType.ONLY_KOREAN -> StudyType.ONLY_ENGLISH
+            else -> StudyType.ONLY_ENGLISH
         }
     }
 }

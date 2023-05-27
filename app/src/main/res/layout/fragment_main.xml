@@ -33,8 +33,7 @@
             android:layout_marginTop="100dp"
             android:layout_marginBottom="20dp"
             android:background="@color/black"
-            android:onClick="@{() -> viewModel.moveToStudy()}"
-            android:text="@string/action_study"
+            android:text="단어 카드 학습"
             android:textColor="@color/white"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -85,7 +84,7 @@
             android:textColor="@color/white"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register" />
+            app:layout_constraintTop_toBottomOf="@+id/mainTogroupBtn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
