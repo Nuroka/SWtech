@@ -87,6 +87,11 @@ class GroupListRepository(private val database:GroupListDatabase) {
             database.groupwordDao.searchWords(searchKeyword, groupid)
         }
     }
+    suspend fun getGroupWordEnglishList(groupid: Int): List<String>{
+        return withContext(Dispatchers.IO){
+            database.groupwordDao.getGroupWordEnglishList(groupid)
+        }
+    }
 }
 /*
     suspend fun InsertGroupWord(word:GroupWord){

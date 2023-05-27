@@ -1,6 +1,7 @@
 package com.example.wordbook.addwordinfo
 
 import android.app.Application
+import android.location.Geocoder.isPresent
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -35,6 +36,14 @@ class AddWordInfoViewModel(application: Application, val mWordId: Int, val mGrou
         }
         val word = repositoryWord.findById(mWordId)
         return repositoryGroup.insertGroupWord(GroupWord.make(mGroupId, word.english, word.means))
+    }
+    suspend fun checkWordInGroupWord(mWordId: Int): Boolean{
+        val groupwordlist = repositoryGroup.getGroupWordEnglishList(mGroupId)
+        val word = repositoryWord.findById(mWordId)
+        if(groupwordlist.contains(word.english)){
+            return true
+        }
+        return false
     }
 
     //word Id 있는지 확인하는 작업
