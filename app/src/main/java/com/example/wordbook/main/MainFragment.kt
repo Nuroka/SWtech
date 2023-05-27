@@ -15,15 +15,15 @@ import com.example.wordbook.R
 import com.example.wordbook.databinding.FragmentMainBinding
 import com.example.wordbook.grouplist.GroupListBaseFragment
 import com.example.wordbook.study.StudyFragment
+import com.example.wordbook.test.TestDateFragment
 import com.example.wordbook.test.TestFragment
 import com.example.wordbook.vocalist.UserVocaListBaseFragment
+import com.example.wordbook.test.TestResultFragment
+import com.example.wordbook.test.TestWordGoalFragment
 import com.example.wordbook.vocalist.VocaListBaseFragment
 
 class MainFragment : Fragment() {
 
-//    companion object {
-//        fun newInstance() = MainFragment()
-//    }
     companion object {
         fun newInstance(userID: String?) = MainFragment().apply {
             arguments = Bundle().apply {
@@ -85,6 +85,18 @@ class MainFragment : Fragment() {
         }
 
         userID = arguments?.getString("userID")
+
+
+        //추가한 부분
+        //매일학습테스트 버튼 클릭
+        binding.test.setOnClickListener{
+            addTestDateFragment()
+        }
+
+        //단어목표설정 버튼 클릭
+        binding.testwordgoal.setOnClickListener{
+            addTestWordGoalFragment()
+        }
 
         return binding.root
     }
@@ -150,4 +162,31 @@ class MainFragment : Fragment() {
             .addToBackStack(null)
             .commit()
     }
+
+
+    //추가한 부분
+    //메인페이지에서 "테스트" 버튼 클릭 시 testdate(테스트 날짜 선택)페이지로 이동
+    private fun addTestDateFragment(){
+        supportFragmentManager
+            .beginTransaction()
+            .setReorderingAllowed(true)
+            .replace(BaseActivity.FRAGMENT_CONTAINER_ID, TestDateFragment.newInstance())
+            .addToBackStack("MainFragment") //TestResultFragment에서 바로 여기로 돌아오게 name 설정함
+            .commit()
+    }
+
+
+    //메인페이지에서 "단어목표설정" 버튼 클릭 시 testwordgoal(단어목표설정)페이지로 이동
+    private fun addTestWordGoalFragment(){
+        supportFragmentManager
+            .beginTransaction()
+            .setReorderingAllowed(true)
+            .replace(BaseActivity.FRAGMENT_CONTAINER_ID, TestWordGoalFragment.newInstance())
+            .addToBackStack(null)
+            .commit()
+    }
+
+
+
+
 }
