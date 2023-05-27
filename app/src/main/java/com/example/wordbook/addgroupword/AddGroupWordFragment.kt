@@ -56,11 +56,26 @@ class AddGroupWordFragment : Fragment() {
         adapter = AddGroupWordAdapter(::MoveToWordInfo)
         binding.wordlist.adapter = adapter
 
+        binding.searchGroupWord.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                performSearch(newText)
+                return true
+            }
+        })
         viewModel.wordList.observe(viewLifecycleOwner){
             //어답터 구현하고 오류 뜨는지 확인 필요
             adapter.submitList(it)
         }
+
         return binding.root
+    }
+
+    private fun performSearch(query: String) {
+        viewModel.searchWords(query) // Room 데이터베이스 쿼리 실행
     }
 
     //여기 수정해야함 복붙하느라 이상한 값 컨테이너가 들어갔네

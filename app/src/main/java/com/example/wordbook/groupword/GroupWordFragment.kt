@@ -98,6 +98,7 @@ class GroupWordFragment : Fragment() {
     private fun DeleteToGroupWord(groupword: GroupWord) {
         lifecycleScope.launch {
             viewModel.deleteGroupWord(groupword)
+            viewModel.getWordList()
         }
     }
 

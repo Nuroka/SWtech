@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -67,8 +68,13 @@ class AddWordInfoFragment : Fragment() {
         }
         binding.wordInfoAddBtn.setOnClickListener{
             lifecycleScope.launch {
-                viewModel.insertGroupWord()
-                destroy()
+                if (viewModel.checkWordInGroupWord(mWordId)){
+                    Toast.makeText(context, "단어장에 이미 있는 단어입니다. 다른 단어를 선택하세요.", Toast.LENGTH_SHORT).show()
+                }
+                else {
+                    viewModel.insertGroupWord()
+                    destroy()
+                }
             }
         }
 

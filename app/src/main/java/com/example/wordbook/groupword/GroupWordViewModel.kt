@@ -40,4 +40,11 @@ class GroupWordViewModel(application: Application, val mGroupId: Int):ViewModel(
             groupWordList.postValue(allWords.reversed())
         }
     }
+
+    fun getWordList(){
+        viewModelScope.launch {
+            val allword = repository.getWordList(mGroupId)
+            groupWordList.postValue(allword.reversed())
+        }
+    }
 }

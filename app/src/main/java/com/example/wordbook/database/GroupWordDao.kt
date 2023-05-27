@@ -26,4 +26,6 @@ interface GroupWordDao{
     @Query("SELECT * FROM groupwords WHERE (groupWordEnglish LIKE '%' || :searchKeyword || '%' OR groupWordMeans LIKE '%' || :searchKeyword || '%') AND groupid_base_groupword = :groupid  ")
     suspend fun searchWords(searchKeyword: String, groupid: Int): List<GroupWord>
 
+    @Query("SELECT groupWordEnglish FROM groupwords WHERE groupid_base_groupword = :groupid")
+    suspend fun getGroupWordEnglishList(groupid: Int):List<String>
 }

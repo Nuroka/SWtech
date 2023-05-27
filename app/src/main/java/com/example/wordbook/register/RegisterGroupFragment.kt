@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -33,8 +34,13 @@ class RegisterGroupFragment : Fragment() {
         //register가 DB에 저장하는 함수임 얘는 ViewModel에 정의되어 있음.
         binding.registerGroupBtn.setOnClickListener{
             val title = binding.inputGroupTitle.text.toString()
-            viewModel.registerGroup(Group.make(title))
-            destroy()
+            if(title.isEmpty()){
+                Toast.makeText(context, "단어장 이름에 글자를 입력해 주세요", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                viewModel.registerGroup(Group.make(title))
+                destroy()
+            }
         }
         return binding.root
     }
