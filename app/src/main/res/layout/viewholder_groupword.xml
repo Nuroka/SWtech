@@ -44,13 +44,14 @@
             android:id="@+id/meansgroupword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="100dp"
+            android:layout_marginEnd="80dp"
             android:text="@string/title_mean"
             android:textColor="@color/deepGray"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.509"
             app:meansgroupword="@{groupword}" />
 
         <TextView
