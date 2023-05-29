@@ -43,6 +43,7 @@
             android:background="@drawable/border_under_edge"
             android:ems="10"
             android:hint="단어장 이름을 입력하세요"
+            android:maxLength="13"
             android:inputType="textPersonName"
             android:text="@{grouptitle.grouptitle}"
             app:layout_constraintBottom_toTopOf="@+id/registerGroupBtn"

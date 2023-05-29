@@ -99,8 +99,14 @@ class MainFragment : Fragment() {
             addTestWordGoalFragment()
         }
 
+        //스터디 이동
         binding.study.setOnClickListener{
             addStudyDateFragment()
+        }
+
+        //실력 검증 테스트로 이동
+        binding.firstTest.setOnClickListener{
+            addFirstTestFragment()
         }
 
         return binding.root
@@ -203,6 +209,14 @@ class MainFragment : Fragment() {
             .commit()
     }
 
+    private fun addFirstTestFragment(){
+        supportFragmentManager
+            .beginTransaction()
+            .setReorderingAllowed(true)
+            .replace(BaseActivity.FRAGMENT_CONTAINER_ID, TestFragment.newInstance())
+            .addToBackStack("MainFragment")
+            .commit()
+    }
 
 }
 
