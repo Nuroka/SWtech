@@ -62,7 +62,7 @@
             app:layout_constraintStart_toEndOf="@+id/view"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.493" />
-        <!--text에 grouptitle 표시 가능하도록 변수 선언 필요
+        <!--text에 grouptitle 표시 가능하도록 변수 선언 필요11
 
         -->
 
