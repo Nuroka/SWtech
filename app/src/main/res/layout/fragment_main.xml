@@ -92,9 +92,11 @@
             android:backgroundTint="#6EC5FF"
             android:text="단어목표설정"
             android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mainTogroupBtn" />
+            app:layout_constraintTop_toBottomOf="@+id/mainTogroupBtn"
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
