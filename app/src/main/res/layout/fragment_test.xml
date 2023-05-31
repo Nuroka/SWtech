@@ -105,7 +105,7 @@
                 android:layout_weight="0.5"
                 android:orientation="horizontal">
 
-                <Button
+                <android.widget.Button
                     android:id="@+id/button_means1"
                     style="@style/answerBtn"
                     android:layout_width="0dp"
@@ -116,7 +116,7 @@
                     android:onClick="@{() -> viewModel.onClickCandidate(0)}"
                     app:firstCandidate="@{viewModel.MTestUnit}" />
 
-                <Button
+                <android.widget.Button
                     android:id="@+id/button_means2"
                     style="@style/answerBtn"
                     android:layout_width="0dp"
@@ -124,7 +124,6 @@
                     android:layout_marginEnd="10dp"
                     android:layout_weight="0.5"
                     android:onClick="@{() -> viewModel.onClickCandidate(1)}"
-                    app:iconTint="#DC4141"
                     app:secondCandidate="@{viewModel.MTestUnit}" />
 
             </LinearLayout>
@@ -135,7 +134,7 @@
                 android:layout_weight="0.5"
                 android:orientation="horizontal">
 
-                <Button
+                <android.widget.Button
                     android:id="@+id/button_means3"
                     style="@style/answerBtn"
                     android:layout_width="0dp"
@@ -146,7 +145,7 @@
                     android:onClick="@{() -> viewModel.onClickCandidate(2)}"
                     app:thirdCandidate="@{viewModel.MTestUnit}" />
 
-                <Button
+                <android.widget.Button
                     android:id="@+id/button_means4"
                     style="@style/answerBtn"
                     android:layout_width="0dp"
@@ -158,19 +157,17 @@
 
             </LinearLayout>
 
-            <Button
+            <android.widget.Button
                 android:id="@+id/button_means5"
                 style="@style/answerBtn"
                 android:text="모르겠음"
                 android:onClick="@{() -> viewModel.onClickCandidate(4)}"
-
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.2"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"/>
-
 
 <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
         </LinearLayout>
