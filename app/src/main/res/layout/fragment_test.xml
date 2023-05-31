@@ -50,64 +50,130 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+        <LinearLayout
             android:id="@+id/candidate_container"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="#ececec"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/question_container"
             app:layout_constraintVertical_weight="1">
 
-            <Button
-                android:id="@+id/button_means1"
-                style="@style/answerBtn"
-                android:onClick="@{() -> viewModel.onClickCandidate(0)}"
-                app:firstCandidate="@{viewModel.MTestUnit}"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+<!--            <Button-->
+<!--                android:id="@+id/button_means1"-->
+<!--                style="@style/answerBtn"-->
+<!--                android:onClick="@{() -> viewModel.onClickCandidate(0)}"-->
+<!--                app:firstCandidate="@{viewModel.MTestUnit}"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 
-            <Button
-                android:id="@+id/button_means2"
-                style="@style/answerBtn"
-                android:onClick="@{() -> viewModel.onClickCandidate(1)}"
-                app:secondCandidate="@{viewModel.MTestUnit}"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/button_means1" />
+<!--            <Button-->
+<!--                android:id="@+id/button_means2"-->
+<!--                style="@style/answerBtn"-->
+<!--                android:onClick="@{() -> viewModel.onClickCandidate(1)}"-->
+<!--                app:secondCandidate="@{viewModel.MTestUnit}"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/button_means1" />-->
 
-            <Button
-                android:id="@+id/button_means3"
-                style="@style/answerBtn"
-                android:onClick="@{() -> viewModel.onClickCandidate(2)}"
-                app:thirdCandidate="@{viewModel.MTestUnit}"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/button_means2" />
+<!--            <Button-->
+<!--                android:id="@+id/button_means3"-->
+<!--                style="@style/answerBtn"-->
+<!--                android:onClick="@{() -> viewModel.onClickCandidate(2)}"-->
+<!--                app:thirdCandidate="@{viewModel.MTestUnit}"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/button_means2" />-->
 
-            <Button
-                android:id="@+id/button_means4"
-                style="@style/answerBtn"
-                android:onClick="@{() -> viewModel.onClickCandidate(3)}"
-                app:fourthCandidate="@{viewModel.MTestUnit}"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/button_means3" />
+<!--            <Button-->
+<!--                android:id="@+id/button_means4"-->
+<!--                style="@style/answerBtn"-->
+<!--                android:onClick="@{() -> viewModel.onClickCandidate(3)}"-->
+<!--                app:fourthCandidate="@{viewModel.MTestUnit}"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/button_means3" />-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_means1"
+                    style="@style/answerBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="0.5"
+                    android:onClick="@{() -> viewModel.onClickCandidate(0)}"
+                    app:firstCandidate="@{viewModel.MTestUnit}" />
+
+                <Button
+                    android:id="@+id/button_means2"
+                    style="@style/answerBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="0.5"
+                    android:onClick="@{() -> viewModel.onClickCandidate(1)}"
+                    app:iconTint="#DC4141"
+                    app:secondCandidate="@{viewModel.MTestUnit}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_means3"
+                    style="@style/answerBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="0.5"
+                    android:layout_marginEnd="10dp"
+                    android:onClick="@{() -> viewModel.onClickCandidate(2)}"
+                    app:thirdCandidate="@{viewModel.MTestUnit}" />
+
+                <Button
+                    android:id="@+id/button_means4"
+                    style="@style/answerBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:layout_marginEnd="10dp"
+                    android:onClick="@{() -> viewModel.onClickCandidate(3)}"
+                    app:fourthCandidate="@{viewModel.MTestUnit}" />
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/button_means5"
                 style="@style/answerBtn"
                 android:text="모르겠음"
                 android:onClick="@{() -> viewModel.onClickCandidate(4)}"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/button_means4" />
+
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"/>
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+        </LinearLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
