@@ -31,31 +31,28 @@
 
         <TextView
             android:id="@+id/correctCountTextview"
-            android:layout_width="60dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginEnd="1dp"
+            android:layout_width="40dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="82dp"
             android:layout_toEndOf="@id/howtestcount"
             android:gravity="center"
             android:text="0"
             android:textColor="@color/black"
             android:textSize="30sp"
-            app:layout_constraintHorizontal_bias="0.097"
+            app:layout_constraintEnd_toStartOf="@+id/howtestcount"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="@+id/howtestcount"
             app:layout_constraintTop_toBottomOf="@+id/testResult" />
 
         <TextView
             android:id="@+id/howtestcount"
-            android:layout_width="250dp"
-            android:layout_height="45dp"
+            android:layout_width="217dp"
+            android:layout_height="47dp"
             android:layout_marginTop="80dp"
+            android:layout_marginRight="70dp"
             android:gravity="center"
             android:text="개를 맞추셨습니다!"
             android:textColor="@color/black"
             android:textSize="30sp"
-            app:layout_constraintHorizontal_bias="0.733"
-            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/testResult" />
 
