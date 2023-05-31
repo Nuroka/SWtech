@@ -9,6 +9,7 @@ import com.example.wordbook.database.Group
 import com.example.wordbook.database.GroupWord
 import com.example.wordbook.database.Word
 import com.example.wordbook.study.StudyViewModel
+import com.example.wordbook.test.FirstTestViewModel
 import com.example.wordbook.test.TestViewModel
 
 @BindingAdapter("english")
@@ -117,6 +118,40 @@ fun TextView.setThirdCandidate(item: TestViewModel.TestUnit?) {
 
 @BindingAdapter("fourthCandidate")
 fun TextView.setFourthCandidate(item: TestViewModel.TestUnit?) {
+    item?.let {
+        text =  it.candidates[3].means
+    }
+}
+
+@BindingAdapter("fquestion")
+fun TextView.setQuestionEnglish(item: FirstTestViewModel.TestUnit?) {
+    text = item?.let {
+        it.question.english
+    } ?: ""
+}
+@BindingAdapter("ffirstCandidate")
+fun TextView.setFirstCandidate(item: FirstTestViewModel.TestUnit?) {
+    item?.let {
+        text =  it.candidates[0].means
+    }
+}
+
+@BindingAdapter("fsecondCandidate")
+fun TextView.setSecondCandidate(item: FirstTestViewModel.TestUnit?) {
+    item?.let {
+        text =  it.candidates[1].means
+    }
+}
+
+@BindingAdapter("fthirdCandidate")
+fun TextView.setThirdCandidate(item: FirstTestViewModel.TestUnit?) {
+    item?.let {
+        text =  it.candidates[2].means
+    }
+}
+
+@BindingAdapter("ffourthCandidate")
+fun TextView.setFourthCandidate(item: FirstTestViewModel.TestUnit?) {
     item?.let {
         text =  it.candidates[3].means
     }

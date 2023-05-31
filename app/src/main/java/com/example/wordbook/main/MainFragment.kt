@@ -16,11 +16,8 @@ import com.example.wordbook.databinding.FragmentMainBinding
 import com.example.wordbook.grouplist.GroupListBaseFragment
 import com.example.wordbook.study.StudyDateFragment
 import com.example.wordbook.study.StudyFragment
-import com.example.wordbook.test.TestDateFragment
-import com.example.wordbook.test.TestFragment
+import com.example.wordbook.test.*
 import com.example.wordbook.vocalist.UserVocaListBaseFragment
-import com.example.wordbook.test.TestResultFragment
-import com.example.wordbook.test.TestWordGoalFragment
 import com.example.wordbook.vocalist.VocaListBaseFragment
 
 class MainFragment : Fragment() {
@@ -213,7 +210,7 @@ class MainFragment : Fragment() {
         supportFragmentManager
             .beginTransaction()
             .setReorderingAllowed(true)
-            .replace(BaseActivity.FRAGMENT_CONTAINER_ID, TestFragment.newInstance())
+            .replace(BaseActivity.FRAGMENT_CONTAINER_ID, FirstTestFragment.newInstance())
             .addToBackStack("MainFragment")
             .commit()
     }
