@@ -60,7 +60,7 @@ class FirstTestFragment : Fragment() {
                 isTestResultFragmentShown = true //TestResultFragment에서 여기로 백할 때 이것이 다시 실행되지 않도록 막음
                 parentFragmentManager.beginTransaction()
                     .setReorderingAllowed(true)
-                    .replace(BaseActivity.FRAGMENT_CONTAINER_ID, TestResultFragment.newInstance(correctCount)) //correctCount값 전달
+                    .replace(BaseActivity.FRAGMENT_CONTAINER_ID, FirstTestResultFragment.newInstance(correctCount)) //correctCount값 전달
                     .addToBackStack(null)
                     .commit()
             }

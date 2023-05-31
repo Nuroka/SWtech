@@ -30,6 +30,45 @@
             app:layout_constraintVertical_bias="0.161" />
 
         <TextView
+            android:id="@+id/toeictext1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="20dp"
+            android:text="당신의 토익점수는"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/howtestcount" />
+
+        <TextView
+            android:id="@+id/toeicresult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="5dp"
+            android:text="000"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toStartOf="@+id/toeictest2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/toeictext1"
+            app:layout_constraintTop_toBottomOf="@+id/howtestcount" />
+
+        <TextView
+            android:id="@+id/toeictest2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="23dp"
+            android:text="점 입니다."
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/howtestcount" />
+
+        <TextView
             android:id="@+id/correctCountTextview"
             android:layout_width="28dp"
             android:layout_height="47dp"

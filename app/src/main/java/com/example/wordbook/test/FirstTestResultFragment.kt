@@ -56,7 +56,19 @@ class FirstTestResultFragment : Fragment() {
             it.getInt(ARG_CORRECT_COUNT)
         } ?: -1
 
+        val testToeicResult =
+            if(testCorrectCount > 3){
+                700
+            }
+            else if(testCorrectCount>1){
+                500
+            }
+            else{
+                300
+            }
+
         binding.correctCountTextview.text = testCorrectCount.toString() //correctCountTextView 텍스트 값을 testCorrectCount 값으로 변경
+        binding.toeicresult.text = testToeicResult.toString()
 
 
         binding.moveToMain.setOnClickListener {

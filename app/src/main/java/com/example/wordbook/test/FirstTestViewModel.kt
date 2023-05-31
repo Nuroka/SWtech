@@ -30,7 +30,7 @@ class FirstTestViewModel(application: Application): AndroidViewModel(application
 
     //추가한 부분
     var correctCount = 0 // 정답 개수를 저장할 변수
-    var testCount = 100 //단어목표설정 값 일단 70으로 둠 // 남은 문제 개수를 저장할 변수//
+    var testCount = 5 //단어목표설정 값 일단 70으로 둠 // 남은 문제 개수를 저장할 변수//
 
 
 
