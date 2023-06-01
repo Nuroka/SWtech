@@ -66,6 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:backgroundTint="@color/main_button_color"
+            android:onClick="@{() -> viewModel.moveToStudy()}"
             android:text="단어 카드 학습"
             android:textColor="@color/white"
             app:layout_constraintLeft_toLeftOf="parent"
