@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="black">#FF000000</color>
+    <color name="blue">#018AF1</color>
+    <color name="deepGray">#ababab</color>
+    <color name="gray_input">#EEEEEE</color>
+    <color name="gray_underbar">#696969</color>
+    <color name="green_100">#48CE33</color>
+    <color name="green_200">#F0FFE4</color>
+    <color name="lightGreen">#C8F0C2</color>
+    <color name="light_blue">#87ceeb</color>
+    <color name="main_button_color">#0095FF</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="action_add">추가</string>
+    <string name="action_cancel">취소</string>
+    <string name="action_confirm">확인</string>
+    <string name="action_delete">삭제</string>
+    <string name="action_edit">수정</string>
+    <string name="action_register">단어 목록</string>
+    <string name="action_study">공부하기</string>
+    <string name="action_test">테스트</string>
+    <string name="add_button">단어 추가 버튼</string>
+    <string name="app_name">VocaBambi</string>
+    <string name="english_input">영어 단어를 입력하세요</string>
+    <string name="error_limit_1_word">최소 1개의 단어를 등록해주세요.</string>
+    <string name="error_limit_4_word">최소 4개의 단어를 등록해주세요.</string>
+    <string name="good_bye">Good Bye!</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="main_name">단어장</string>
+    <string name="means_input">영어 단어의 뜻을 입력하세요</string>
+    <string name="msg_correct">맞았습니다.</string>
+    <string name="msg_none"/>
+    <string name="msg_study_error">오류가 발생했어요😢</string>
+    <string name="msg_wrong">틀렸습니다.</string>
+    <string name="title_both">모두</string>
+    <string name="title_english">영어</string>
+    <string name="title_mean">뜻</string>
+    <string name="title_only_english">영어만</string>
+    <string name="title_only_korean">뜻만</string>
+    <string name="word_list">단어장 목록</string>
+    <style name="Theme.WordBook" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="android:fontFamily">@font/gangwonbold</item>
+        <item name="android:textSize">20sp</item>
+        
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
+        
+    </style>
+    <style name="answerBtn">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_marginTop">10dp</item>
+
+        <item name="android:background">@drawable/button_shadow</item>
+        <item name="android:backgroundTint">#323C73</item>
+    </style>
+</resources>

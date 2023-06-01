@@ -1,0 +1,262 @@
+[
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_fragment_group_list_base.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_group_list_base.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.wordbook.app-main-39:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/drawable_smu02.png.flat",
+        "source": "com.example.wordbook.app-main-39:/drawable/smu02.png"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_viewholder_add_groupword.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/viewholder_add_groupword.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/font_spoqahansansneothin.ttf.flat",
+        "source": "com.example.wordbook.app-main-39:/font/spoqahansansneothin.ttf"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_fragment_voca_list_base.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_voca_list_base.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_fragment_main.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_main.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_fragment_test_date.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_test_date.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_fragment_test_result.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_test_result.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.wordbook.app-main-39:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.wordbook.app-main-39:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_fragment_study_date.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_study_date.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.wordbook.app-main-39:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.wordbook.app-main-39:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.wordbook.app-main-39:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_fragment_add_group_word.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_add_group_word.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_activity_inputid.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/activity_inputid.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_fragment_add_group_word_base.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_add_group_word_base.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/font_spoqahansansneomedium.ttf.flat",
+        "source": "com.example.wordbook.app-main-39:/font/spoqahansansneomedium.ttf"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_fragment_add_word_info.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_add_word_info.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/drawable_ic_left.png.flat",
+        "source": "com.example.wordbook.app-main-39:/drawable/ic_left.png"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.wordbook.app-main-39:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_fragment_group_word_base.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_group_word_base.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_activity_pwanswer.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/activity_pwanswer.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/xml_backup_rules.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.wordbook.app-main-39:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_fragment_first_test.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_first_test.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_fragment_edit_voca.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_edit_voca.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_viewholder_groupword.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/viewholder_groupword.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_fragment_study.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_study.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/drawable_ic_right.png.flat",
+        "source": "com.example.wordbook.app-main-39:/drawable/ic_right.png"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/drawable_bg.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/drawable/bg.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/font_spoqahansansneoregular.ttf.flat",
+        "source": "com.example.wordbook.app-main-39:/font/spoqahansansneoregular.ttf"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/drawable_smu01.png.flat",
+        "source": "com.example.wordbook.app-main-39:/drawable/smu01.png"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/font_gangwonbold.ttf.flat",
+        "source": "com.example.wordbook.app-main-39:/font/gangwonbold.ttf"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.wordbook.app-main-39:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.wordbook.app-main-39:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/font_spoqahansansneobold.ttf.flat",
+        "source": "com.example.wordbook.app-main-39:/font/spoqahansansneobold.ttf"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_activity_login.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_activity_base.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/activity_base.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_fragment_test.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_test.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_fragment_register_voca.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_register_voca.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_viewholder_group.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/viewholder_group.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/drawable_border_under_edge.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/drawable/border_under_edge.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/drawable_groupbox_shape.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/drawable/groupbox_shape.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_viewholder_voca.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/viewholder_voca.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_fragment_group_word.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_group_word.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_activity_register.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/activity_register.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_fragment_register_group.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_register_group.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_activity_findpw.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/activity_findpw.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_fragment_first_test_result.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_first_test_result.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_activity_pwcheck.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/activity_pwcheck.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_fragment_group_list.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_group_list.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/font_spoqahansansneolight.ttf.flat",
+        "source": "com.example.wordbook.app-main-39:/font/spoqahansansneolight.ttf"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_fragment_test_word_goal.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_test_word_goal.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/font_gangwonlight.ttf.flat",
+        "source": "com.example.wordbook.app-main-39:/font/gangwonlight.ttf"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_fragment_voca_list.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/fragment_voca_list.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/drawable_button_shadow.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/drawable/button_shadow.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.example.wordbook.app-pngs-32:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/layout_action_bar.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/layout/action_bar.xml"
+    },
+    {
+        "merged": "com.example.wordbook.app-merged_res-37:/drawable_ic_delete.xml.flat",
+        "source": "com.example.wordbook.app-main-39:/drawable/ic_delete.xml"
+    }
+]
